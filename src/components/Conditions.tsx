@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import WatermelonIcon from "./WatermelonIcon";
 import kiwi from "../assets/images/Kiwi-Fruits.png";
 
 const CONDITIONS = [
@@ -35,14 +35,10 @@ export default function Conditions() {
         <ul className="space-y-4">
           {CONDITIONS.map((item, i) => (
             <li key={item} className="flex items-center gap-3">
-              <span
-                className={
-                  "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white " +
-                  (i % 2 === 0 ? "bg-green-bright" : "bg-pink")
-                }
-              >
-                <Check size={14} strokeWidth={3} />
-              </span>
+              <WatermelonIcon
+                color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
+                size={28}
+              />
               <span className="text-ink">{item}</span>
             </li>
           ))}
