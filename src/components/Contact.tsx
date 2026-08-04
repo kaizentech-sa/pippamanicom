@@ -8,6 +8,9 @@ const INTERESTS = [
   "Something else",
 ];
 
+const fieldClass =
+  "w-full rounded-lg border-0 bg-black/5 px-4 py-2.5 text-sm text-ink outline-none placeholder:text-body/70 focus:ring-2 focus:ring-pink";
+
 export default function Contact() {
   const [sent, setSent] = useState(false);
 
@@ -19,12 +22,10 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-cover bg-bottom pb-24 pt-20 md:pb-40"
+      className="bg-cover bg-bottom pb-24 pt-20 md:pb-40"
       style={{ backgroundImage: `url(${peppers})` }}
     >
-      <div className="absolute inset-0 bg-white/70" />
-
-      <div className="relative mx-auto max-w-xl px-6 text-center">
+      <div className="mx-auto max-w-xl px-6 text-center">
         <h2 className="mb-8 text-3xl font-semibold text-ink">
           Interested? Get In Touch
         </h2>
@@ -34,10 +35,7 @@ export default function Contact() {
             Thanks for reaching out — Pippa will be in touch soon.
           </div>
         ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 rounded-2xl bg-white p-8 text-left shadow-lg"
-          >
+          <form onSubmit={handleSubmit} className="space-y-4 text-left">
             <div>
               <label className="mb-1 block text-sm font-medium text-ink">
                 First Name <span className="text-pink">*</span>
@@ -47,7 +45,7 @@ export default function Contact() {
                 required
                 placeholder="E.g. John"
                 autoComplete="name"
-                className="w-full rounded-lg border border-periwinkle/50 px-4 py-2.5 text-sm outline-none focus:border-pink"
+                className={fieldClass}
               />
             </div>
 
@@ -61,7 +59,7 @@ export default function Contact() {
                   required
                   placeholder="E.g. john@doe.com"
                   autoComplete="email"
-                  className="w-full rounded-lg border border-periwinkle/50 px-4 py-2.5 text-sm outline-none focus:border-pink"
+                  className={fieldClass}
                 />
               </div>
               <div>
@@ -71,7 +69,7 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="E.g. +27 82 428 4374"
-                  className="w-full rounded-lg border border-periwinkle/50 px-4 py-2.5 text-sm outline-none focus:border-pink"
+                  className={fieldClass}
                 />
               </div>
             </div>
@@ -80,7 +78,7 @@ export default function Contact() {
               <label className="mb-1 block text-sm font-medium text-ink">
                 I want to know more about...
               </label>
-              <select className="w-full rounded-lg border border-periwinkle/50 px-4 py-2.5 text-sm outline-none focus:border-pink">
+              <select className={fieldClass}>
                 <option value="">Select an option</option>
                 {INTERESTS.map((i) => (
                   <option key={i} value={i}>
@@ -98,7 +96,7 @@ export default function Contact() {
                 maxLength={180}
                 rows={4}
                 placeholder="Enter your message..."
-                className="w-full resize-none rounded-lg border border-periwinkle/50 px-4 py-2.5 text-sm outline-none focus:border-pink"
+                className={`resize-none ${fieldClass}`}
               />
             </div>
 
