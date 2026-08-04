@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import peppers from "../assets/images/Pippa-Manicom-peppers.jpg";
+import peppers from "../assets/images/Pippa-Manicom-peppers.webp";
 
 const INTERESTS = [
   "Private Consultations",

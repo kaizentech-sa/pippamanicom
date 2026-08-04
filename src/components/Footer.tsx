@@ -24,7 +24,14 @@ export default function Footer() {
     <footer className="bg-white">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-3">
         <div>
-          <img src={logo} alt="Pippa Manicom Logo" className="h-36 w-auto" />
+          <img
+            src={logo}
+            alt="Pippa Manicom Logo"
+            width={500}
+            height={288}
+            loading="lazy"
+            className="h-36 w-auto"
+          />
         </div>
 
         <div>
@@ -42,32 +49,34 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <h2 className="mb-3 text-lg font-semibold text-ink">
+          <h3 className="mb-3 text-lg font-semibold text-ink">
             More Information
-          </h2>
+          </h3>
           <a href="/privacy-policy" className="text-sm text-slate hover:text-pink">
             Privacy Policy
           </a>
         </div>
 
         <div>
-          <h2 className="mb-3 text-lg font-semibold text-ink">Contact</h2>
-          <ul className="space-y-2 text-sm text-slate">
-            <li>
+          <h3 className="mb-3 text-lg font-semibold text-ink">Contact</h3>
+          <address className="space-y-2 text-sm not-italic text-slate">
+            <p>
               <span className="font-semibold text-ink">Email: </span>
               <a href="mailto:hello@pippamanicom.co.za" className="hover:text-pink">
                 hello@pippamanicom.co.za
               </a>
-            </li>
-            <li>
+            </p>
+            <p>
               <span className="font-semibold text-ink">Cell: </span>
-              084 616 7000
-            </li>
-            <li>
+              <a href="tel:+27846167000" className="hover:text-pink">
+                084 616 7000
+              </a>
+            </p>
+            <p>
               <span className="font-semibold text-ink">Address: </span>
-              Willow Road, Constantia
-            </li>
-          </ul>
+              Willow Road, Constantia, Cape Town
+            </p>
+          </address>
         </div>
       </div>
 

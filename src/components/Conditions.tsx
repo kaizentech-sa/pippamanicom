@@ -1,5 +1,5 @@
 import WatermelonIcon from "./WatermelonIcon";
-import kiwi from "../assets/images/Kiwi-Fruits.png";
+import kiwi from "../assets/images/Kiwi-Fruits.webp";
 
 const CONDITIONS = [
   "Weight Management (loss or gain)",
@@ -28,6 +28,9 @@ export default function Conditions() {
           <img
             src={kiwi}
             alt="Kiwi"
+            width={675}
+            height={395}
+            loading="lazy"
             className="mt-8 hidden w-4/5 rounded-[40px] md:block"
           />
         </div>

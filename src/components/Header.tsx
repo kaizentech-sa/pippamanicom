@@ -17,7 +17,13 @@ export default function Header() {
     <header className="absolute inset-x-0 top-0 z-50 bg-transparent">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <a href="#" className="shrink-0">
-          <img src={logo} alt="Pippa Manicom Logo" className="h-20 w-auto" />
+          <img
+            src={logo}
+            alt="Pippa Manicom Logo"
+            width={500}
+            height={288}
+            className="h-20 w-auto"
+          />
         </a>
 
         <nav className="hidden md:block">

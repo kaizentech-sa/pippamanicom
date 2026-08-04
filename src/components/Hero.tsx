@@ -1,5 +1,5 @@
 import { Stethoscope, Flower2, Apple } from "lucide-react";
-import heroBg from "../assets/images/Pippa-Manicom.jpg";
+import heroBg from "../assets/images/Pippa-Manicom.webp";
 
 const FEATURES = [
   { icon: Stethoscope, title: "Health", desc: "Physical and mental" },
@@ -38,7 +38,7 @@ export default function Hero() {
               <Icon size={24} />
             </span>
             <div>
-              <h5 className="mb-1 font-semibold text-ink">{title}</h5>
+              <h3 className="mb-1 font-semibold text-ink">{title}</h3>
               <p className="text-sm text-body">{desc}</p>
             </div>
           </div>

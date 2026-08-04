@@ -1,24 +1,25 @@
 import { useState } from "react";
 import ServiceModal from "./ServiceModal";
-import lemons from "../assets/images/Pippa-Manicom-Lemons.png";
-import protein from "../assets/images/Pippa-.png";
-import avocados from "../assets/images/Pippa-Manicom-Avocados.png";
-import limes from "../assets/images/Limes.jpg";
-import blueberries from "../assets/images/Blueberrues.jpg";
+import lemons from "../assets/images/Pippa-Manicom-Lemons.webp";
+import protein from "../assets/images/Pippa-.webp";
+import avocados from "../assets/images/Pippa-Manicom-Avocados.webp";
+import limes from "../assets/images/Limes.webp";
+import blueberries from "../assets/images/Blueberrues.webp";
 
 export default function Services() {
   const [modal, setModal] = useState<"private" | "corporate" | null>(null);
 
   return (
     <section id="services" className="mx-auto max-w-6xl px-6 py-16">
+      <h2 className="sr-only">Services</h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <div
           className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
           style={{ backgroundImage: `url(${lemons})` }}
         >
-          <h4 className="mb-2 text-lg font-semibold text-ink">
+          <h3 className="mb-2 text-lg font-semibold text-ink">
             Private Consultations
-          </h4>
+          </h3>
           <p className="mb-4 text-sm text-body">
             My personalised approach takes into account your unique
             lifestyle, preferences, and challenges, ensuring that we create a
@@ -43,9 +44,9 @@ export default function Services() {
           className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
           style={{ backgroundImage: `url(${protein})` }}
         >
-          <h4 className="mb-2 text-lg font-semibold text-ink">
+          <h3 className="mb-2 text-lg font-semibold text-ink">
             Corporate Wellness
-          </h4>
+          </h3>
           <p className="mb-4 text-sm text-body">
             With over 20 years of experience in working with corporates, I
             understand the challenges of keeping a work-life balance. I can
@@ -70,9 +71,9 @@ export default function Services() {
           className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
           style={{ backgroundImage: `url(${avocados})` }}
         >
-          <h4 className="mb-2 text-lg font-semibold text-ink">
+          <h3 className="mb-2 text-lg font-semibold text-ink">
             Nutrition Talks
-          </h4>
+          </h3>
           <p className="mb-4 text-sm text-body">
             Talks and presentations are available for all age groups - from
             primary and high school students to university students and

@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
-import portrait from "../assets/images/Pippa-Manicom-Portrait.jpg";
-import atDesk from "../assets/images/Pippa-at-work-desk.jpg";
+import portrait from "../assets/images/Pippa-Manicom-Portrait.webp";
+import atDesk from "../assets/images/Pippa-at-work-desk.webp";
 
 const QUALIFICATIONS = [
   "BSc in Human Physiology and Psychology (UCT)",
@@ -33,6 +33,9 @@ export default function About() {
           <img
             src={portrait}
             alt="Pippa Manicom"
+            width={499}
+            height={750}
+            loading="lazy"
             className="mx-auto w-full max-w-sm rounded-3xl object-cover md:max-w-none"
           />
           <div>
@@ -108,6 +111,9 @@ export default function About() {
           <img
             src={atDesk}
             alt="Pippa Manicom at desk"
+            width={750}
+            height={1000}
+            loading="lazy"
             className="mx-auto w-4/5 rounded-[3%_3%_3%_40%] object-cover md:w-full"
           />
         </div>
