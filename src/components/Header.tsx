@@ -14,17 +14,17 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur">
+    <header className="absolute inset-x-0 top-0 z-50 bg-transparent">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <a href="#" className="shrink-0">
-          <img src={logo} alt="Pippa Manicom Logo" className="h-14 w-auto" />
+          <img src={logo} alt="Pippa Manicom Logo" className="h-20 w-auto" />
         </a>
 
         <nav className="hidden md:block">
-          <ul className="flex items-center gap-8 text-sm font-medium text-ink">
+          <ul className="flex items-center gap-8 text-base font-medium text-pink">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="transition-colors hover:text-pink">
+                <a href={link.href} className="transition-colors hover:text-pink-dark">
                   {link.label}
                 </a>
               </li>
@@ -44,8 +44,8 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-lavender md:hidden">
-          <ul className="flex flex-col gap-1 px-6 py-4 text-sm font-medium text-ink">
+        <nav className="border-t border-lavender bg-white md:hidden">
+          <ul className="flex flex-col gap-1 px-6 py-4 text-sm font-medium text-pink">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
