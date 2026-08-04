@@ -25,7 +25,7 @@ export default function Services() {
             path to wellness that works for you, can be done in person or
             online.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm font-semibold tracking-wide">
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold tracking-wide">
             <button
               type="button"
               onClick={() => setModal("private")}
@@ -52,7 +52,7 @@ export default function Services() {
             help increase productivity in a healthier, happier working
             environment.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm font-semibold tracking-wide">
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold tracking-wide">
             <button
               type="button"
               onClick={() => setModal("corporate")}
@@ -78,7 +78,7 @@ export default function Services() {
             primary and high school students to university students and
             older adults - on topics related to healthy, balanced eating.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm font-semibold tracking-wide">
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold tracking-wide">
             <a href="#contact" className="text-pink">
               Book a Talk
             </a>
