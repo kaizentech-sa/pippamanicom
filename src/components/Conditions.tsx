@@ -25,9 +25,14 @@ export default function Conditions() {
           <h3 className="mt-2 text-xl font-medium text-ink">
             Pippa can help with:
           </h3>
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-body">
+            As a registered dietitian in Cape Town, Pippa provides
+            evidence-based, personalised nutrition therapy for a wide range
+            of medical conditions and lifestyle goals, including:
+          </p>
           <img
             src={kiwi}
-            alt="Kiwi"
+            alt="Fresh kiwi fruit - healthy nutrition guidance from a Cape Town dietitian"
             width={675}
             height={395}
             loading="lazy"
@@ -35,14 +40,14 @@ export default function Conditions() {
           />
         </div>
 
-        <ul className="space-y-4">
+        <ul className="space-y-8">
           {CONDITIONS.map((item, i) => (
-            <li key={item} className="flex items-center gap-3">
+            <li key={item} className="flex items-center gap-4">
               <WatermelonIcon
                 color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
-                size={28}
+                size={30}
               />
-              <span className="text-ink">{item}</span>
+              <span className="text-lg text-ink">{item}</span>
             </li>
           ))}
         </ul>

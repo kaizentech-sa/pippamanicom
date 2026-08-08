@@ -1,4 +1,4 @@
-import { Stethoscope, Flower2, Apple } from "lucide-react";
+import { Stethoscope, Flower2, Apple, BadgeCheck } from "lucide-react";
 import heroBg from "../assets/images/Pippa-Manicom.webp";
 
 const FEATURES = [
@@ -7,26 +7,48 @@ const FEATURES = [
   { icon: Apple, title: "Food", desc: "Optimal nutrition" },
 ];
 
+const TRUST_BADGES = [
+  "HPCSA Registered Dietitian",
+  "20+ Years Experience",
+  "UCT Qualified",
+];
+
 export default function Hero() {
   return (
     <>
       <section
-        className="relative flex min-h-[60vh] items-center overflow-hidden rounded-b-[56px] bg-cover bg-[position:center_right] pt-20 md:min-h-[70vh] md:rounded-b-[80px]"
+        aria-label="Pippa Manicom, registered dietitian in Constantia, Cape Town"
+        className="relative flex min-h-[70vh] items-center overflow-hidden rounded-b-[56px] bg-cover bg-[position:center_right] pt-20 md:min-h-[88vh] md:rounded-b-[80px]"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-lavender via-lavender/60 to-transparent" />
 
         <div className="relative mx-auto w-full max-w-6xl px-6 py-16 md:py-24">
-          <div className="max-w-xl">
-            <h1 className="text-4xl font-semibold leading-tight text-ink md:text-[50px]">
+          <div className="max-w-4xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-pink">
+              Registered Dietitian in Constantia, Cape Town
+            </p>
+            <h1 className="text-4xl font-semibold leading-tight text-ink md:text-[52px]">
               Your journey to healthy living starts here
             </h1>
             <a
               href="#contact"
-              className="mt-6 inline-block rounded-full bg-pink px-8 py-3 text-sm font-semibold tracking-wide text-white transition-transform hover:scale-105"
+              className="mt-6 inline-block rounded-full bg-pink px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-transform hover:scale-105"
             >
               Book a Consultation
             </a>
+
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+              {TRUST_BADGES.map((badge) => (
+                <li
+                  key={badge}
+                  className="flex items-center gap-1.5 text-sm font-medium text-ink"
+                >
+                  <BadgeCheck size={16} className="text-green" />
+                  {badge}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

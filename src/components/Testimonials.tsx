@@ -36,9 +36,11 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="my-12 rounded-[32px] bg-gradient-to-br from-pink/65 to-pink-dark px-6 py-16 text-center text-white md:mx-6"
+      className="my-12 rounded-[32px] bg-gradient-to-br from-pink/65 to-pink-dark px-6 py-20 text-center text-white"
     >
-      <h2 className="mb-10 text-3xl font-semibold">Testimonials</h2>
+      <h2 className="mb-10 text-3xl font-semibold">
+        What Our Cape Town Clients Say
+      </h2>
 
       <div className="mx-auto flex max-w-2xl items-center gap-4">
         <button
@@ -51,7 +53,7 @@ export default function Testimonials() {
         </button>
 
         <div className="min-h-[140px] flex-1">
-          <p className="text-sm leading-relaxed md:text-base">
+          <p className="text-sm italic leading-relaxed md:text-base">
             {current.text}
           </p>
           <cite className="mt-4 block text-sm font-semibold not-italic">

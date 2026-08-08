@@ -32,7 +32,7 @@ export default function About() {
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           <img
             src={portrait}
-            alt="Pippa Manicom"
+            alt="Pippa Manicom, registered dietitian in Constantia, Cape Town"
             width={499}
             height={750}
             loading="lazy"
@@ -110,7 +110,7 @@ export default function About() {
           </div>
           <img
             src={atDesk}
-            alt="Pippa Manicom at desk"
+            alt="Pippa Manicom working at her Constantia dietitian practice, Cape Town"
             width={750}
             height={1000}
             loading="lazy"
@@ -118,9 +118,9 @@ export default function About() {
           />
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 border-t border-periwinkle/40 pt-12 md:grid-cols-3">
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-ink">
+        <div className="mt-16 flex flex-col gap-16 border-t border-periwinkle/40 pt-12">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-[280px_1fr] md:gap-12">
+            <h3 className="text-lg font-semibold text-ink">
               Qualifications
             </h3>
             <ul className="space-y-3">
@@ -129,8 +129,8 @@ export default function About() {
               ))}
             </ul>
           </div>
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-ink">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-[280px_1fr] md:gap-12">
+            <h3 className="text-lg font-semibold text-ink">
               Professional Associations
             </h3>
             <ul className="space-y-3">
@@ -139,8 +139,8 @@ export default function About() {
               ))}
             </ul>
           </div>
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-ink">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-[280px_1fr] md:gap-12">
+            <h3 className="text-lg font-semibold text-ink">
               Hobbies and Interests
             </h3>
             <p className="text-sm leading-relaxed text-body">

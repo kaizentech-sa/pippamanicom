@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 import peppers from "../assets/images/Pippa-Manicom-peppers.webp";
 
 const INTERESTS = [
@@ -13,6 +14,7 @@ const fieldClass =
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,13 +24,43 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-cover bg-bottom pb-24 pt-20 md:pb-40"
+      className="bg-cover bg-bottom pb-40 pt-20 md:pb-64"
       style={{ backgroundImage: `url(${peppers})` }}
     >
       <div className="mx-auto max-w-xl px-6 text-center">
-        <h2 className="mb-8 text-3xl font-semibold text-ink">
+        <h2 className="mb-3 text-3xl font-semibold text-ink">
           Interested? Get In Touch
         </h2>
+        <p className="mb-8 text-sm text-body">
+          Book a dietitian consultation in Constantia, Cape Town, or online —
+          no referral needed.
+        </p>
+
+        <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="tel:+27846167000"
+            className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink shadow-sm transition-transform hover:scale-105"
+          >
+            <Phone size={15} className="text-pink" />
+            084 616 7000
+          </a>
+          <a
+            href="https://wa.me/27846167000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink shadow-sm transition-transform hover:scale-105"
+          >
+            <MessageCircle size={15} className="text-green" />
+            WhatsApp
+          </a>
+          <a
+            href="mailto:hello@pippamanicom.co.za"
+            className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink shadow-sm transition-transform hover:scale-105"
+          >
+            <Mail size={15} className="text-pink" />
+            Email
+          </a>
+        </div>
 
         {sent ? (
           <div className="rounded-2xl bg-white p-8 text-body shadow-lg">
@@ -96,16 +128,25 @@ export default function Contact() {
                 maxLength={180}
                 rows={4}
                 placeholder="Enter your message..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className={`resize-none ${fieldClass}`}
               />
+              <div className="mt-1 text-right text-xs text-body/70">
+                {message.length} / 180
+              </div>
             </div>
 
             <button
               type="submit"
-              className="w-full rounded-full bg-pink py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
+              className="w-full rounded-full bg-pink py-3 text-sm font-semibold uppercase tracking-wide text-white transition-transform hover:scale-[1.02]"
             >
               Send Message
             </button>
+            <p className="text-center text-xs text-body/70">
+              HPCSA registered · No referral needed · Your information stays
+              private.
+            </p>
           </form>
         )}
       </div>

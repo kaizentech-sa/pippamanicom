@@ -26,11 +26,11 @@ export default function Footer() {
         <div>
           <img
             src={logo}
-            alt="Pippa Manicom Logo"
+            alt="Pippa Manicom Registered Dietitian - Constantia, Cape Town"
             width={500}
             height={288}
             loading="lazy"
-            className="h-36 w-auto"
+            className="h-40 w-auto"
           />
         </div>
 
@@ -81,6 +81,17 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-lavender">
+        <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs text-slate md:text-left">
+          <p>
+            <span className="font-semibold text-ink">Serving: </span>
+            Constantia, Tokai, Bishopscourt, Wynberg, Claremont, Kenilworth,
+            Newlands, Rondebosch, Plumstead &amp; the greater Cape Town
+            Southern Suburbs — online consultations available nationwide.
+          </p>
+        </div>
+      </div>
+
+      <div className="border-t border-lavender">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-5 text-center text-xs text-slate md:flex-row md:text-left">
           <p>
             Copyright © {new Date().getFullYear()} Pippa Manicom Registered
@@ -89,12 +100,12 @@ export default function Footer() {
           <p>
             Made with <span className="text-pink">❤</span> by{" "}
             <a
-              href="https://extremewebbing.com/"
+              href="https://www.kaizentech.co.za"
               target="_blank"
               rel="noopener noreferrer"
               className="text-ink hover:text-pink"
             >
-              Extreme Webbing
+              Kaizen Technology
             </a>
           </p>
         </div>

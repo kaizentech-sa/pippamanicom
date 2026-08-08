@@ -11,9 +11,19 @@ export default function Services() {
 
   return (
     <section id="services" className="mx-auto max-w-6xl px-6 py-16">
-      <h2 className="sr-only">Services</h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="text-3xl font-semibold text-ink">
+          Dietitian Services in Cape Town
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-body">
+          Private consultations, corporate wellness programmes and nutrition
+          talks — available in Constantia, across Cape Town, or online.
+        </p>
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         <div
+          role="img"
+          aria-label="Fresh lemons - private nutrition consultations"
           className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
           style={{ backgroundImage: `url(${lemons})` }}
         >
@@ -26,11 +36,11 @@ export default function Services() {
             path to wellness that works for you, can be done in person or
             online.
           </p>
-          <div className="flex flex-col items-start gap-2 text-sm font-semibold tracking-wide">
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
             <button
               type="button"
               onClick={() => setModal("private")}
-              className="text-green"
+              className="uppercase text-green"
             >
               Details &amp; Rates
             </button>
@@ -41,6 +51,8 @@ export default function Services() {
         </div>
 
         <div
+          role="img"
+          aria-label="Corporate wellness nutrition programme"
           className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
           style={{ backgroundImage: `url(${protein})` }}
         >
@@ -53,11 +65,11 @@ export default function Services() {
             help increase productivity in a healthier, happier working
             environment.
           </p>
-          <div className="flex flex-col items-start gap-2 text-sm font-semibold tracking-wide">
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
             <button
               type="button"
               onClick={() => setModal("corporate")}
-              className="text-pink"
+              className="uppercase text-pink"
             >
               Details
             </button>
@@ -68,6 +80,8 @@ export default function Services() {
         </div>
 
         <div
+          role="img"
+          aria-label="Nutrition talks and presentations"
           className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
           style={{ backgroundImage: `url(${avocados})` }}
         >
@@ -79,7 +93,7 @@ export default function Services() {
             primary and high school students to university students and
             older adults - on topics related to healthy, balanced eating.
           </p>
-          <div className="flex flex-col items-start gap-2 text-sm font-semibold tracking-wide">
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
             <a href="#contact" className="text-pink">
               Book a Talk
             </a>
