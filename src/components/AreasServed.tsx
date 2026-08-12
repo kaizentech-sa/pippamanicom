@@ -4,6 +4,7 @@ const AREAS = [
   "Constantia",
   "Tokai",
   "Bishopscourt",
+  "Meadowridge",
   "Wynberg",
   "Claremont",
   "Kenilworth",

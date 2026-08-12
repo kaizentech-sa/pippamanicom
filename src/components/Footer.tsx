@@ -84,8 +84,9 @@ export default function Footer() {
         <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs text-slate md:text-left">
           <p>
             <span className="font-semibold text-ink">Serving: </span>
-            Constantia, Tokai, Bishopscourt, Wynberg, Claremont, Kenilworth,
-            Newlands, Rondebosch, Plumstead &amp; the greater Cape Town
+            Constantia, Tokai, Bishopscourt, Meadowridge, Wynberg, Claremont,
+            Kenilworth, Newlands, Rondebosch, Plumstead, Bergvliet,
+            Kirstenbosch, Muizenberg, Hout Bay &amp; the greater Cape Town
             Southern Suburbs — online consultations available nationwide.
           </p>
         </div>

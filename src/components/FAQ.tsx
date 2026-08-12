@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     q: "What areas of Cape Town do you service?",
-    a: "Pippa is based in Constantia and regularly sees clients from Tokai, Bishopscourt, Wynberg, Claremont, Kenilworth, Newlands, Rondebosch, Plumstead, Bergvliet and the wider Southern Suburbs and Cape Town area, as well as online nationwide.",
+    a: "Pippa is based in Constantia and regularly sees clients from Tokai, Bishopscourt, Meadowridge, Wynberg, Claremont, Kenilworth, Newlands, Rondebosch, Plumstead, Bergvliet and the wider Southern Suburbs and Cape Town area, as well as online nationwide.",
   },
   {
     q: "How much does a dietitian consultation cost?",
