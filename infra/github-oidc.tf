@@ -34,11 +34,16 @@ data "aws_iam_policy_document" "github_assume" {
       values   = ["sts.amazonaws.com"]
     }
 
-    # Only pushes to main in this repo may assume the deploy role.
+    # Only this repo may assume the deploy role, either from a push to main
+    # or from a job running in the production environment (jobs that declare
+    # `environment:` get an environment-scoped sub claim instead of the ref).
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:${var.github_repository}:ref:refs/heads/main"]
+      values = [
+        "repo:${var.github_repository}:ref:refs/heads/main",
+        "repo:${var.github_repository}:environment:production",
+      ]
     }
   }
 }
