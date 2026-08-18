@@ -37,12 +37,17 @@ data "aws_iam_policy_document" "github_assume" {
     # Only this repo may assume the deploy role, either from a push to main
     # or from a job running in the production environment (jobs that declare
     # `environment:` get an environment-scoped sub claim instead of the ref).
+    # Both GitHub sub formats are covered: the classic owner/repo form and
+    # the immutable owner@id/repo@id form (IDs are permanent, so this stays
+    # pinned to exactly this repository).
     condition {
-      test     = "StringEquals"
+      test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
       values = [
         "repo:${var.github_repository}:ref:refs/heads/main",
-        "repo:${var.github_repository}:environment:production",
+        "repo:${var.github_repository}:environment:production*",
+        "repo:${var.github_repository_immutable}:ref:refs/heads/main",
+        "repo:${var.github_repository_immutable}:environment:production*",
       ]
     }
   }

@@ -38,6 +38,12 @@ variable "github_repository" {
   default     = "kaizentech-sa/pippamanicom"
 }
 
+variable "github_repository_immutable" {
+  description = "GitHub repository in immutable sub-claim form (owner@owner_id/repo@repo_id), used by newer GitHub OIDC tokens"
+  type        = string
+  default     = "kaizentech-sa@163003767/pippamanicom@1322859982"
+}
+
 variable "create_github_oidc_provider" {
   description = "Set to false if the account already has an IAM OIDC provider for token.actions.githubusercontent.com"
   type        = bool
