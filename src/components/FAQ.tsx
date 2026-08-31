@@ -36,7 +36,7 @@ export default function FAQ() {
   const uid = useId();
 
   return (
-    <section id="faq" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+    <section id="faq" className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
       <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <div className="md:sticky md:top-28 md:self-start">
           <p className="label">Good to know</p>

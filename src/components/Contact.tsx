@@ -44,7 +44,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-sand">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
           <div>
             <p className="label">Get started</p>

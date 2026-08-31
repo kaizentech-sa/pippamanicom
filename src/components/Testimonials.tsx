@@ -2,11 +2,11 @@ import { Quote } from "lucide-react";
 
 function Card({ t, featured = false }: { t: { text: string; name: string }; featured?: boolean }) {
   return (
-    <figure className="flex h-full flex-col rounded-[1.5rem] border border-cream/15 bg-cream/[0.04] p-7">
+    <figure className="rounded-[1.5rem] border border-cream/15 bg-ink/40 p-7">
       <Quote size={featured ? 30 : 24} className="text-honey-bright" />
       <blockquote
         className={
-          "mt-4 flex-1 font-display italic leading-relaxed text-cream/90 " +
+          "mt-4 font-display italic leading-relaxed text-cream/90 " +
           (featured ? "text-lg" : "text-[1rem]")
         }
       >
@@ -36,13 +36,13 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="bg-ink text-cream">
       <div className="sprigs">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <p className="label">In their words</p>
           <h2 className="mt-3 max-w-2xl text-4xl text-cream">
             What Pippa&rsquo;s Cape Town clients say
           </h2>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-[1.35fr_1fr]">
+          <div className="mt-12 grid items-start gap-6 md:grid-cols-[1.3fr_1fr]">
             <Card t={TESTIMONIALS[0]} featured />
             <div className="grid gap-6">
               <Card t={TESTIMONIALS[1]} />

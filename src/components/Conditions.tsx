@@ -16,7 +16,7 @@ const CONDITIONS = [
 export default function Conditions() {
   return (
     <section id="conditions" className="bg-sage">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid items-end gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
           <div>
             <p className="label">How I can help</p>

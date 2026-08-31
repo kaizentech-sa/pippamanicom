@@ -35,7 +35,7 @@ export default function About() {
   return (
     <>
       <section id="about" className="bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
             <div className="relative">
               <div className="absolute -left-3 -top-3 hidden h-32 w-32 rounded-full bg-honey/20 md:block" />
@@ -79,7 +79,7 @@ export default function About() {
         </div>
       </section>
 
-      <section id="work" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      <section id="work" className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:gap-16">
           <div>
             <p className="label">Background</p>
