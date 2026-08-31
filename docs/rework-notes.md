@@ -31,7 +31,23 @@ section-by-section audit and intent. Before/after: `docs/screenshots/{before,rew
 | Testimonials | full-width **pink gradient band** + carousel + arrows + dots | light-free **dark forest section**, **all three quotes visible** as cards (featured + two stacked), no carousel |
 | FAQ | centred `max-w-3xl` accordion in a tinted box, pink chevron | **2-column** — sticky heading left, borderless rows right, honey `+/−` |
 | Contact | centred `max-w-xl`, quick pills, form | **split** — contact list + photo + reassurance left, form on a bordered card right |
-| Footer | 3-col + serving line + **"Made with ♥ by Kaizen Technology"** | **forest-green**, brand + socials / Explore nav / Contact / bottom bar. **Kaizen credit and `kaizentech.co.za` link removed.** (No other agency reference — email/contract — exists in the codebase.) |
+| Footer | 3-col + serving line + **"Made with ♥ by Kaizen Technology"** | **forest-green**, brand + socials / Explore nav / Contact / bottom bar with **"Website designed and hosted by Kaizen Technology"** (linked to kaizentech.co.za) |
+
+## SEO & mobile (later pass — see docs/seo.md)
+
+- The build now **prerenders the SPA to static HTML** — crawlers get the
+  full page (h1, every h2, all FAQ Q&As, suburbs, conditions, testimonials,
+  NAP) with no JS. This was the site's biggest SEO gap.
+- Structured data expanded to one `@graph`: WebSite + MedicalBusiness
+  (knowsAbout, priced offer catalogue, aggregateRating + 3 first-party
+  reviews) + Person (Pippa's HPCSA/UCT/ADSA credentials) + FAQPage (synced
+  to 7 questions). `og:image:alt` added, sitemap `lastmod` refreshed.
+- Local-keyword tuning of a few headings, the hero intro and image alt
+  text. Title / meta / canonical / OG unchanged.
+- **Mobile menu bug fixed** — it was trapped inside the header's
+  `backdrop-filter` box; now a portal on `document.body`, full-screen.
+- Full responsive pass 320–430px: no overflow, sticky-header clearance
+  (`scroll-mt-24` + hero top padding), FAB clears the footer text.
 
 ## Behaviour changes
 
