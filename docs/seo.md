@@ -26,7 +26,7 @@ surfaced everywhere (page copy, headings, and structured data).
 | Several image `alt` texts were generic ("A dietitian filling in a weekly meal plan") | Low | ✅ Tuned |
 | `og:image:alt` / `twitter:image:alt` missing | Low | ✅ Added |
 | `sitemap.xml` `lastmod` stale (2026-08-12) | Low | ✅ Refreshed |
-| `/privacy-policy` is in the sitemap and footer but no page exists | Medium | ⚠️ Client decision — see §5 |
+| `/privacy-policy` in sitemap + footer, no page (CloudFront served a soft 404) | Medium | Removed from sitemap + footer; real page flagged as follow-up (§5) |
 | Client-side form doesn't submit anywhere server-side | Medium (conversion, not SEO) | ✅ now opens a `mailto:` — a real endpoint would be better |
 
 ---
@@ -188,11 +188,17 @@ List the practice — same name / address / phone — on:
 
 ## 5. `/privacy-policy`
 
-Still referenced in `sitemap.xml` and the footer, with no page behind it.
-A privacy policy is genuinely worth having (POPIA, and it's a small trust
-signal). **Options:** (a) write a short privacy page at that exact URL
-— recommended; (b) remove the sitemap entry and footer link. Either way
-it's a change to an SEO surface, so it's left for sign-off.
+The URL was in `sitemap.xml` and the footer with no page behind it, so
+CloudFront's 403/404 fallback served the homepage there. That is a soft
+404, which hurts more than it helps, so the sitemap entry and footer link
+have been removed.
+
+A real privacy policy is still worth adding (POPIA, plus a small trust
+signal). Doing it properly on this stack means: a `/privacy-policy` route
+in the SPA, prerendered to `dist/privacy-policy.html`, plus a small
+CloudFront viewer-request function that rewrites extensionless paths to
+`.html` (a Terraform change in `infra/`, applied manually). Roughly half
+a day. Flagged as a follow-up.
 
 ---
 

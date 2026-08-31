@@ -31,7 +31,7 @@ ok("one <h1>", (await p.$$("h1")).length === 1);
 ok("WhatsApp number intact", (await p.$$eval("a[href*='wa.me']", (a) => a.every((x) => x.href.includes("27846167000")))) && (await p.$$("a[href*='wa.me']")).length >= 2);
 ok("tel intact", (await p.$("a[href='tel:+27846167000']")) !== null);
 ok("mailto intact", (await p.$("a[href='mailto:hello@pippamanicom.co.za']")) !== null);
-ok("privacy link intact", (await p.$("a[href='/privacy-policy']")) !== null);
+ok("no dead /privacy-policy link", (await p.$("a[href='/privacy-policy']")) === null);
 
 // nav anchors resolve
 const hrefs = await p.$$eval("nav a[href^='#'], main a[href^='#']", (as) => [...new Set(as.map((a) => a.getAttribute("href")))]);

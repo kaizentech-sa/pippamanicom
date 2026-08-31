@@ -62,9 +62,6 @@ export default function Footer() {
                   <a href={l.href} className="hover:text-cream">{l.label}</a>
                 </li>
               ))}
-              <li>
-                <a href="/privacy-policy" className="hover:text-cream">Privacy Policy</a>
-              </li>
             </ul>
           </nav>
 
