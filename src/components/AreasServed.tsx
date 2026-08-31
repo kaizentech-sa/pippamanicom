@@ -18,7 +18,7 @@ const AREAS = [
 
 export default function AreasServed() {
   return (
-    <section id="areas" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
+    <section id="areas" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
       <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">
         <div>
           <p className="label">Where I work</p>

@@ -34,7 +34,7 @@ const ASSOCIATIONS = [
 export default function About() {
   return (
     <>
-      <section id="about" className="bg-sand">
+      <section id="about" className="scroll-mt-24 bg-sand">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
             <div className="relative">
@@ -47,7 +47,7 @@ export default function About() {
             </div>
             <div>
               <p className="label">The dietitian</p>
-              <h2 className="mt-3 text-4xl">About Pippa</h2>
+              <h2 className="mt-3 text-4xl">About Pippa Manicom, registered dietitian</h2>
               <p className="mt-5 font-display text-xl leading-snug text-ink">
                 I'm a registered dietitian with a genuine love of food, health
                 and helping people feel better in their own bodies. My approach
@@ -79,7 +79,7 @@ export default function About() {
         </div>
       </section>
 
-      <section id="work" className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+      <section id="work" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:gap-16">
           <div>
             <p className="label">Background</p>

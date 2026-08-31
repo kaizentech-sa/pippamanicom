@@ -50,6 +50,14 @@
       content="Registered dietitian in Constantia, Cape Town. Private nutrition consultations, corporate wellness & weight-loss support for the Southern Suburbs, in-person or online. HPCSA registered — book today."
     />
     <meta name="twitter:image" content="https://pippamanicom.co.za/og-image.jpg" />
+    <meta
+      property="og:image:alt"
+      content="Pippa Manicom, registered dietitian in Constantia, Cape Town"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Pippa Manicom, registered dietitian in Constantia, Cape Town"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,155 +70,274 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "MedicalBusiness",
-        "@id": "https://pippamanicom.co.za/#business",
-        "name": "Pippa Manicom Registered Dietician",
-        "alternateName": "Pippa Manicom Registered Dietitian",
-        "description": "Registered dietitian in Constantia, Cape Town offering private nutrition consultations, corporate wellness programmes and nutrition talks, in-person or online, for the Southern Suburbs and beyond.",
-        "url": "https://pippamanicom.co.za/",
-        "logo": "https://pippamanicom.co.za/pippa-manicom-logo.png",
-        "image": "https://pippamanicom.co.za/og-image.jpg",
-        "email": "hello@pippamanicom.co.za",
-        "telephone": "+27846167000",
-        "priceRange": "R400 - R880",
-        "currenciesAccepted": "ZAR",
-        "medicalSpecialty": "Dietitian Nutrition",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Willow Road, Constantia",
-          "addressLocality": "Cape Town",
-          "addressRegion": "Western Cape",
-          "postalCode": "7806",
-          "addressCountry": "ZA"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -34.0231,
-          "longitude": 18.4232
-        },
-        "hasMap": "https://www.google.com/maps/place/Constantia,+Cape+Town",
-        "areaServed": [
-          { "@type": "City", "name": "Cape Town" },
-          { "@type": "Place", "name": "Constantia" },
-          { "@type": "Place", "name": "Tokai" },
-          { "@type": "Place", "name": "Bishopscourt" },
-          { "@type": "Place", "name": "Meadowridge" },
-          { "@type": "Place", "name": "Wynberg" },
-          { "@type": "Place", "name": "Claremont" },
-          { "@type": "Place", "name": "Kenilworth" },
-          { "@type": "Place", "name": "Newlands" },
-          { "@type": "Place", "name": "Rondebosch" },
-          { "@type": "Place", "name": "Plumstead" },
-          { "@type": "Place", "name": "Bergvliet" },
-          { "@type": "Place", "name": "Kirstenbosch" },
-          { "@type": "Place", "name": "Muizenberg" },
-          { "@type": "Place", "name": "Hout Bay" },
-          { "@type": "AdministrativeArea", "name": "Southern Suburbs, Cape Town" },
-          { "@type": "Country", "name": "South Africa" }
-        ],
-        "founder": {
-          "@type": "Person",
-          "name": "Pippa Manicom",
-          "jobTitle": "Registered Dietitian",
-          "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "University of Cape Town"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://pippamanicom.co.za/#website",
+            "url": "https://pippamanicom.co.za/",
+            "name": "Pippa Manicom Registered Dietitian",
+            "inLanguage": "en-ZA",
+            "publisher": { "@id": "https://pippamanicom.co.za/#business" }
           },
-          "hasCredential": {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "Professional license",
-            "recognizedBy": {
+          {
+            "@type": "MedicalBusiness",
+            "@id": "https://pippamanicom.co.za/#business",
+            "name": "Pippa Manicom Registered Dietician",
+            "alternateName": "Pippa Manicom Registered Dietitian",
+            "description": "Registered dietitian in Constantia, Cape Town offering private nutrition consultations, corporate wellness programmes and nutrition talks, in-person or online, for the Southern Suburbs and beyond.",
+            "url": "https://pippamanicom.co.za/",
+            "logo": "https://pippamanicom.co.za/pippa-manicom-logo.png",
+            "image": [
+              "https://pippamanicom.co.za/og-image.jpg",
+              "https://pippamanicom.co.za/pippa-manicom-logo.png"
+            ],
+            "email": "hello@pippamanicom.co.za",
+            "telephone": "+27846167000",
+            "priceRange": "R400 - R880",
+            "currenciesAccepted": "ZAR",
+            "medicalSpecialty": "Dietetics",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Willow Road, Constantia",
+              "addressLocality": "Cape Town",
+              "addressRegion": "Western Cape",
+              "postalCode": "7806",
+              "addressCountry": "ZA"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -34.0231,
+              "longitude": 18.4232
+            },
+            "hasMap": "https://www.google.com/maps/place/Constantia,+Cape+Town",
+            "areaServed": [
+              { "@type": "City", "name": "Cape Town" },
+              { "@type": "Place", "name": "Constantia" },
+              { "@type": "Place", "name": "Tokai" },
+              { "@type": "Place", "name": "Bishopscourt" },
+              { "@type": "Place", "name": "Meadowridge" },
+              { "@type": "Place", "name": "Wynberg" },
+              { "@type": "Place", "name": "Claremont" },
+              { "@type": "Place", "name": "Kenilworth" },
+              { "@type": "Place", "name": "Newlands" },
+              { "@type": "Place", "name": "Rondebosch" },
+              { "@type": "Place", "name": "Plumstead" },
+              { "@type": "Place", "name": "Bergvliet" },
+              { "@type": "Place", "name": "Kirstenbosch" },
+              { "@type": "Place", "name": "Muizenberg" },
+              { "@type": "Place", "name": "Hout Bay" },
+              { "@type": "AdministrativeArea", "name": "Southern Suburbs, Cape Town" },
+              { "@type": "Country", "name": "South Africa" }
+            ],
+            "knowsAbout": [
+              "Weight management",
+              "Type 2 diabetes",
+              "Insulin resistance",
+              "High cholesterol",
+              "High blood pressure",
+              "Arthritis",
+              "Gout",
+              "Fibromyalgia",
+              "Chronic fatigue syndrome",
+              "Irritable bowel syndrome",
+              "Reflux and heartburn",
+              "Pregnancy and breastfeeding nutrition",
+              "Menopause nutrition",
+              "Sports nutrition"
+            ],
+            "founder": { "@id": "https://pippamanicom.co.za/#pippa" },
+            "employee": { "@id": "https://pippamanicom.co.za/#pippa" },
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Private Nutrition Consultation",
+                  "description": "One-on-one dietitian consultations in Constantia, Cape Town or online, covering weight management, medical nutrition therapy and personalised eating plans."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Corporate Wellness Programme",
+                  "description": "On-site or virtual corporate nutrition consultations, Vitality nutrition assessments and wellness days for Cape Town businesses."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Nutrition Talks & Presentations",
+                  "description": "Nutrition talks and presentations for schools, universities and community groups across Cape Town."
+                }
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Dietitian consultations",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "priceCurrency": "ZAR",
+                  "price": "750",
+                  "itemOffered": { "@type": "Service", "name": "Initial consultation (60 minutes)" }
+                },
+                {
+                  "@type": "Offer",
+                  "priceCurrency": "ZAR",
+                  "price": "880",
+                  "itemOffered": { "@type": "Service", "name": "Second consultation with eating plan (60–90 minutes)" }
+                },
+                {
+                  "@type": "Offer",
+                  "priceCurrency": "ZAR",
+                  "price": "400",
+                  "itemOffered": { "@type": "Service", "name": "Follow-up consultation (30 minutes)" }
+                },
+                {
+                  "@type": "Offer",
+                  "priceCurrency": "ZAR",
+                  "price": "520",
+                  "itemOffered": { "@type": "Service", "name": "Vitality nutrition assessment (45 minutes)" }
+                }
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "reviewCount": "3"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "author": { "@type": "Person", "name": "Elizabeth Martella-O'Connor" },
+                "reviewBody": "After a diagnosis of pre-diabetes and at the recommendation of my GP, I contacted Pippa Manicom. After 6 months of guided dietary changes, I have not only lost 10kgs, but am no longer pre-diabetic. I am incredibly grateful to Pippa and her creative and personalised recommendations and recipes."
+              },
+              {
+                "@type": "Review",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "author": { "@type": "Person", "name": "Eleni Ratheb" },
+                "reviewBody": "Pippa has a wonderfully relaxed manner and a very sensible approach which is very do-able! I would highly recommend her nutrition services."
+              },
+              {
+                "@type": "Review",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "author": { "@type": "Person", "name": "Aida Fernandes" },
+                "reviewBody": "I have known Pippa for many years and she has helped me reach my goal twice. At times life gets difficult and we have our ups and downs, and Pippa has helped me through."
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/pippa.manicom/",
+              "https://www.instagram.com/pippa_dietitian/",
+              "https://za.linkedin.com/in/pippa-manicom-a64b5b331"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://pippamanicom.co.za/#pippa",
+            "name": "Pippa Manicom",
+            "jobTitle": "Registered Dietitian",
+            "description": "HPCSA-registered dietitian with 20+ years of experience, practising from Constantia, Cape Town.",
+            "url": "https://pippamanicom.co.za/#about",
+            "image": "https://pippamanicom.co.za/og-image.jpg",
+            "worksFor": { "@id": "https://pippamanicom.co.za/#business" },
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Cape Town" },
+            "memberOf": {
               "@type": "Organization",
-              "name": "Health Professions Council of South Africa (HPCSA)"
-            }
-          }
-        },
-        "makesOffer": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Private Nutrition Consultation",
-              "description": "One-on-one dietitian consultations in Constantia, Cape Town or online, covering weight management, medical nutrition therapy and personalised eating plans."
-            }
+              "name": "Association for Dietetics in South Africa (ADSA)"
+            },
+            "knowsLanguage": "en",
+            "knowsAbout": [
+              "Medical nutrition therapy",
+              "Weight management",
+              "Type 2 diabetes and insulin resistance",
+              "Cardiovascular nutrition",
+              "Gastrointestinal health",
+              "Pregnancy, breastfeeding and menopause nutrition",
+              "Sports nutrition"
+            ],
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "Professional license",
+                "identifier": "DT0019429",
+                "recognizedBy": {
+                  "@type": "Organization",
+                  "name": "Health Professions Council of South Africa (HPCSA)"
+                }
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "BSc (Med)(Hons) Nutrition & Dietetics",
+                "recognizedBy": { "@type": "CollegeOrUniversity", "name": "University of Cape Town" }
+              }
+            ]
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Corporate Wellness Programme",
-              "description": "On-site or virtual corporate nutrition consultations, Vitality nutrition assessments and wellness days for Cape Town businesses."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Nutrition Talks & Presentations",
-              "description": "Nutrition talks and presentations for schools, universities and community groups across Cape Town."
-            }
-          }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/pippa.manicom/",
-          "https://www.instagram.com/pippa_dietitian/",
-          "https://za.linkedin.com/in/pippa-manicom-a64b5b331"
-        ]
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do I need a doctor's referral to see a dietitian in Cape Town?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No referral is required. You can book a private consultation with Pippa Manicom directly, whether you're managing a medical condition, want to lose weight, or simply want to eat better."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer online dietitian consultations, or only in-person in Constantia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Both. Consultations are available in person at Willow Road, Constantia, Cape Town, or online via video call for clients anywhere in South Africa."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What areas of Cape Town do you service?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Pippa is based in Constantia and regularly sees clients from Tokai, Bishopscourt, Meadowridge, Wynberg, Claremont, Kenilworth, Newlands, Rondebosch, Plumstead, Bergvliet and the wider Southern Suburbs and Cape Town area, as well as online nationwide."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How much does a dietitian consultation cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "An initial consultation (60 minutes) is R750, a second consultation with an eating plan is R880, follow-up consultations are R400, and a Vitality nutrition assessment is R520."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Pippa Manicom a registered dietitian?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Pippa is registered with the Health Professions Council of South Africa (HPCSA, membership number DT0019429) and is a member of the Association of Dietetics in South Africa (ADSA)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What conditions can a dietitian help with?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Pippa helps with weight management, type 2 diabetes and insulin resistance, high cholesterol, high blood pressure, arthritis and gout, fibromyalgia and chronic fatigue syndrome, IBS and reflux, pregnancy and breastfeeding nutrition, menopause and sports nutrition."
-            }
+            "@type": "FAQPage",
+            "@id": "https://pippamanicom.co.za/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need a doctor's referral to see a dietitian in Cape Town?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No referral is required. You can book a private consultation with Pippa directly, whether you're managing a medical condition, want to lose weight, or simply want to eat better."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer online dietitian consultations, or only in-person in Constantia?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Both. Consultations are available in person at Willow Road, Constantia, Cape Town, or online via video call for clients anywhere in South Africa."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What areas of Cape Town do you service?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pippa is based in Constantia and regularly sees clients from Tokai, Bishopscourt, Meadowridge, Wynberg, Claremont, Kenilworth, Newlands, Rondebosch, Plumstead, Bergvliet and the wider Southern Suburbs and Cape Town area, as well as online nationwide."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a dietitian consultation cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "An initial consultation (60 minutes) is R750, a second consultation with an eating plan is R880, follow-up consultations are R400, and a Vitality nutrition assessment is R520. See the Services section above for full details."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Pippa Manicom a registered dietitian?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Pippa is registered with the Health Professions Council of South Africa (HPCSA, membership number DT0019429) and is a member of the Association of Dietetics in South Africa (ADSA)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What conditions can a dietitian help with?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pippa helps with weight management, type 2 diabetes and insulin resistance, high cholesterol, high blood pressure, arthritis and gout, fibromyalgia and chronic fatigue syndrome, IBS and reflux, pregnancy and breastfeeding nutrition, menopause and sports nutrition."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I book an appointment?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Simply fill in the contact form below, WhatsApp or call 084 616 7000, or email hello@pippamanicom.co.za — Pippa will get back to you to confirm a time that suits you."
+                }
+              }
+            ]
           }
         ]
       }

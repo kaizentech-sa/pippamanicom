@@ -12,17 +12,17 @@ const BADGES = ["HPCSA registered", "20+ years' experience", "UCT qualified"];
 export default function Hero() {
   return (
     <>
-      <section id="top" aria-label="Pippa Manicom, registered dietitian in Constantia, Cape Town">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-14 md:px-8 md:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <section id="top" className="scroll-mt-24" aria-label="Pippa Manicom, registered dietitian in Constantia, Cape Town">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-24 md:px-8 md:pb-20 md:pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
             <p className="eyebrow">Registered dietitian · Constantia, Cape Town</p>
             <h1 className="mt-4 text-[2.5rem] leading-[1.06] sm:max-w-[15ch] sm:text-5xl lg:text-[3.35rem]">
               Nutrition care that fits your real life
             </h1>
             <p className="mt-5 max-w-md text-base text-body">
-              Evidence-based, one-on-one dietitian care for weight, medical
-              conditions and everyday eating — in person in Constantia or online
-              across South Africa.
+              Evidence-based, one-on-one care from a registered dietitian in
+              Constantia — for weight, medical conditions and everyday eating,
+              in person or online across South Africa.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">

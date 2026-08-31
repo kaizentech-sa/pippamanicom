@@ -15,12 +15,12 @@ const CONDITIONS = [
 
 export default function Conditions() {
   return (
-    <section id="conditions" className="bg-sage">
+    <section id="conditions" className="scroll-mt-24 bg-sage">
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid items-end gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
           <div>
             <p className="label">How I can help</p>
-            <h2 className="mt-3 text-4xl">Medical conditions &amp; lifestyle needs</h2>
+            <h2 className="mt-3 text-4xl">Medical conditions a dietitian can help with</h2>
             <p className="mt-4 max-w-lg text-base text-body">
               Pippa offers evidence-based, personalised nutrition care for a wide
               range of medical conditions and everyday health goals. Common

@@ -43,12 +43,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-sand">
+    <section id="contact" className="scroll-mt-24 bg-sand">
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
           <div>
             <p className="label">Get started</p>
-            <h2 className="mt-3 text-4xl">Book a consultation</h2>
+            <h2 className="mt-3 text-4xl">Book a dietitian consultation</h2>
             <p className="mt-4 max-w-sm text-base text-body">
               In Constantia, across Cape Town, or online — no referral needed.
             </p>

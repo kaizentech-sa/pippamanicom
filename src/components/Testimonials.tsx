@@ -34,7 +34,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-ink text-cream">
+    <section id="testimonials" className="scroll-mt-24 bg-ink text-cream">
       <div className="sprigs">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <p className="label">In their words</p>

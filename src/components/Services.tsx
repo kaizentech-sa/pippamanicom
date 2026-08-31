@@ -44,7 +44,7 @@ export default function Services() {
   const [modal, setModal] = useState<ModalKey | null>(null);
 
   return (
-    <section id="services" className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+    <section id="services" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
       <header className="max-w-2xl">
         <p className="label">What I do</p>
         <h2 className="mt-3 text-4xl">Dietitian services in Cape Town</h2>

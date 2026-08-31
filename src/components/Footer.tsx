@@ -21,7 +21,7 @@ const NAV = [
 export default function Footer() {
   return (
     <footer className="bg-ink text-cream">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
+      <div className="mx-auto max-w-6xl px-5 py-16 pb-28 md:px-8 md:pb-16">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1.2fr]">
           <div>
             <span className="inline-block rounded-xl bg-cream p-3">
@@ -92,9 +92,22 @@ export default function Footer() {
             &amp; the greater Cape Town Southern Suburbs — online consultations
             available nationwide.
           </p>
-          <p className="mt-4">
-            Copyright © {new Date().getFullYear()} Pippa Manicom Registered Dietician
-          </p>
+          <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              Copyright © {new Date().getFullYear()} Pippa Manicom Registered Dietician
+            </p>
+            <p>
+              Website designed and hosted by{" "}
+              <a
+                href="https://www.kaizentech.co.za"
+                target="_blank"
+                rel="noopener"
+                className="text-cream/80 underline decoration-cream/30 underline-offset-2 hover:text-cream"
+              >
+                Kaizen Technology
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
