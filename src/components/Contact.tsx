@@ -1,6 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import peppers from "../assets/images/Pippa-Manicom-peppers.webp";
+import { artwork } from "../assets/imagery";
+
+const Pepper = artwork["contact.produce"];
 
 const INTERESTS = [
   "Private Consultations",
@@ -24,12 +26,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-cover bg-bottom pb-40 pt-20 md:pb-64"
-      style={{ backgroundImage: `url(${peppers})` }}
+      className="relative overflow-hidden bg-cloud pb-24 pt-20"
     >
-      <div className="mx-auto max-w-xl px-6 text-center">
+      <Pepper
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-10 -right-8 hidden w-56 opacity-70 md:block"
+      />
+      <div className="relative mx-auto max-w-xl px-6 text-center">
         <h2 className="mb-3 text-3xl font-semibold text-ink">
-          Interested? Get In Touch
+          Ready to get started? Get in touch
         </h2>
         <p className="mb-8 text-sm text-body">
           Book a dietitian consultation in Constantia, Cape Town, or online —

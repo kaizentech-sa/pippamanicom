@@ -1,5 +1,7 @@
 import WatermelonIcon from "./WatermelonIcon";
-import kiwi from "../assets/images/Kiwi-Fruits.webp";
+import { artwork } from "../assets/imagery";
+
+const Kiwi = artwork["conditions.produce"];
 
 const CONDITIONS = [
   "Weight Management (loss or gain)",
@@ -26,25 +28,17 @@ export default function Conditions() {
             Pippa can help with:
           </h3>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-body">
-            As a registered dietitian in Cape Town, Pippa provides
-            evidence-based, personalised nutrition therapy for a wide range
-            of medical conditions and lifestyle goals, including:
+            Pippa offers evidence-based, personalised nutrition care for a wide
+            range of medical conditions and everyday health goals, including:
           </p>
-          <img
-            src={kiwi}
-            alt="Fresh kiwi fruit - healthy nutrition guidance from a Cape Town dietitian"
-            width={675}
-            height={395}
-            loading="lazy"
-            className="mt-8 hidden w-4/5 rounded-[40px] md:block"
-          />
+          <Kiwi className="mt-10 hidden w-40 md:block" />
         </div>
 
         <ul className="space-y-8">
           {CONDITIONS.map((item, i) => (
             <li key={item} className="flex items-center gap-4">
               <WatermelonIcon
-                color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
+                color={i % 2 === 0 ? "#7cc47a" : "#ec297a"}
                 size={30}
               />
               <span className="text-lg text-ink">{item}</span>

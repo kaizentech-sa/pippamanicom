@@ -20,9 +20,10 @@ export default function Testimonials() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(
       () => setIndex((i) => (i + 1) % TESTIMONIALS.length),
-      5000,
+      6000,
     );
     return () => clearInterval(id);
   }, []);
@@ -36,7 +37,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="my-12 rounded-[32px] bg-gradient-to-br from-pink/65 to-pink-dark px-6 py-20 text-center text-white"
+      className="my-12 rounded-[28px] bg-gradient-to-br from-pink/70 to-pink-dark px-6 py-20 text-center text-white"
     >
       <h2 className="mb-10 text-3xl font-semibold">
         What Our Cape Town Clients Say

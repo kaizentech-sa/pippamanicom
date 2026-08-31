@@ -1,5 +1,7 @@
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "./SocialIcons";
-import logo from "../assets/images/Pippa_Manicom_logo.png";
+import { photos } from "../assets/imagery";
+
+const logo = photos.logoFooter;
 
 const SOCIALS = [
   {
@@ -25,12 +27,12 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-3">
         <div>
           <img
-            src={logo}
-            alt="Pippa Manicom Registered Dietitian - Constantia, Cape Town"
-            width={500}
-            height={288}
+            src={logo.src}
+            alt={logo.alt}
+            width={logo.width}
+            height={logo.height}
             loading="lazy"
-            className="h-40 w-auto"
+            className="h-auto w-44 max-w-full object-contain"
           />
         </div>
 

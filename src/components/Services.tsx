@@ -1,10 +1,10 @@
 import { useState } from "react";
 import ServiceModal from "./ServiceModal";
-import lemons from "../assets/images/Pippa-Manicom-Lemons.webp";
-import protein from "../assets/images/Pippa-.webp";
-import avocados from "../assets/images/Pippa-Manicom-Avocados.webp";
-import limes from "../assets/images/Limes.webp";
-import blueberries from "../assets/images/Blueberrues.webp";
+import { artwork } from "../assets/imagery";
+
+const Lemon = artwork["services.private"];
+const Citrus = artwork["services.corporate"];
+const Avocado = artwork["services.talks"];
 
 export default function Services() {
   const [modal, setModal] = useState<"private" | "corporate" | null>(null);
@@ -21,20 +21,15 @@ export default function Services() {
         </p>
       </div>
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-        <div
-          role="img"
-          aria-label="Fresh lemons - private nutrition consultations"
-          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
-          style={{ backgroundImage: `url(${lemons})` }}
-        >
+        <div className="flex flex-col rounded-2xl bg-card p-8 transition-shadow hover:shadow-xl">
+          <Lemon className="mb-6 h-28 w-28" />
           <h3 className="mb-2 text-lg font-semibold text-ink">
             Private Consultations
           </h3>
-          <p className="mb-4 text-sm text-body">
-            My personalised approach takes into account your unique
-            lifestyle, preferences, and challenges, ensuring that we create a
-            path to wellness that works for you, can be done in person or
-            online.
+          <p className="mb-4 flex-1 text-sm text-body">
+            We start with your life as it actually is — your routine, your
+            budget, the things that get in the way — and build an eating plan
+            that works around them. In person in Constantia, or online.
           </p>
           <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
             <button
@@ -50,20 +45,15 @@ export default function Services() {
           </div>
         </div>
 
-        <div
-          role="img"
-          aria-label="Corporate wellness nutrition programme"
-          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
-          style={{ backgroundImage: `url(${protein})` }}
-        >
+        <div className="flex flex-col rounded-2xl bg-card p-8 transition-shadow hover:shadow-xl">
+          <Citrus className="mb-6 h-28 w-28" />
           <h3 className="mb-2 text-lg font-semibold text-ink">
             Corporate Wellness
           </h3>
-          <p className="mb-4 text-sm text-body">
-            With over 20 years of experience in working with corporates, I
-            understand the challenges of keeping a work-life balance. I can
-            help increase productivity in a healthier, happier working
-            environment.
+          <p className="mb-4 flex-1 text-sm text-body">
+            More than 20 years working with companies has shown me what helps
+            people eat well around a demanding job. Practical sessions that
+            support a healthier, more productive team.
           </p>
           <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
             <button
@@ -79,19 +69,15 @@ export default function Services() {
           </div>
         </div>
 
-        <div
-          role="img"
-          aria-label="Nutrition talks and presentations"
-          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
-          style={{ backgroundImage: `url(${avocados})` }}
-        >
+        <div className="flex flex-col rounded-2xl bg-card p-8 transition-shadow hover:shadow-xl">
+          <Avocado className="mb-6 h-28 w-28" />
           <h3 className="mb-2 text-lg font-semibold text-ink">
             Nutrition Talks
           </h3>
-          <p className="mb-4 text-sm text-body">
-            Talks and presentations are available for all age groups - from
-            primary and high school students to university students and
-            older adults - on topics related to healthy, balanced eating.
+          <p className="mb-4 flex-1 text-sm text-body">
+            Friendly, practical talks on balanced eating for every age group —
+            from primary and high school learners to university students, staff
+            groups and older adults.
           </p>
           <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
             <a href="#contact" className="text-pink">
@@ -105,7 +91,7 @@ export default function Services() {
         open={modal === "private"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image={limes}
+        art={artwork["modal.private"]}
       >
         <ul className="list-disc space-y-3 pl-5">
           <li>
@@ -139,7 +125,7 @@ export default function Services() {
         open={modal === "corporate"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image={blueberries}
+        art={artwork["modal.corporate"]}
       >
         <ul className="list-disc space-y-2 pl-5">
           <li>One-on-one consultations in the office environment</li>

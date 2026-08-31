@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "../assets/images/Pippa_Manicom_logo.png";
+import { photos } from "../assets/imagery";
+
+const logo = photos.logoHeader;
 
 const NAV_LINKS = [
   { href: "#services", label: "Services" },
@@ -19,11 +21,11 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <a href="#" className="shrink-0">
           <img
-            src={logo}
-            alt="Pippa Manicom - Registered Dietitian in Constantia, Cape Town"
-            width={500}
-            height={288}
-            className="h-28 w-auto md:h-32"
+            src={logo.src}
+            alt={logo.alt}
+            width={logo.width}
+            height={logo.height}
+            className="h-24 w-auto md:h-28"
           />
         </a>
 

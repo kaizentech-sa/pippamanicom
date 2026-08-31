@@ -1,11 +1,12 @@
 import { useEffect } from "react";
+import type { ComponentType, SVGProps } from "react";
 import { X } from "lucide-react";
 
 interface ServiceModalProps {
   open: boolean;
   onClose: () => void;
   title: string;
-  image: string;
+  art: ComponentType<SVGProps<SVGSVGElement>>;
   children: React.ReactNode;
 }
 
@@ -13,7 +14,7 @@ export default function ServiceModal({
   open,
   onClose,
   title,
-  image,
+  art: Art,
   children,
 }: ServiceModalProps) {
   useEffect(() => {
@@ -35,13 +36,15 @@ export default function ServiceModal({
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
         className="relative max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-3xl bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div
-          className="h-40 rounded-t-3xl bg-cover bg-center"
-          style={{ backgroundImage: `url(${image})` }}
-        />
+        <div className="flex h-40 items-center justify-center rounded-t-3xl bg-cloud">
+          <Art className="h-24 w-24" />
+        </div>
         <button
           type="button"
           onClick={onClose}
@@ -58,7 +61,7 @@ export default function ServiceModal({
           <a
             href="#contact"
             onClick={onClose}
-            className="mt-6 inline-block rounded-full bg-pink px-8 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
+            className="mt-6 inline-block rounded-full bg-pink px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-pink-dark"
           >
             Book a Consultation
           </a>

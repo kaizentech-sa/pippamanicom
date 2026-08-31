@@ -1,19 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Poppins", sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
 
+  /* Brand pink is unchanged. Everything around it is warmed up:
+     the cool blue/lavender neutrals become oat / sand / clay. */
   --color-pink: #ec297a;
   --color-pink-dark: #d1236b;
-  --color-green: #72c065;
-  --color-green-bright: #61ce70;
-  --color-ink: #2b2f38;
-  --color-body: #5d6167;
-  --color-cloud: #f9f9f9;
-  --color-slate: #4e5768;
-  --color-lavender: #efeef4;
-  --color-periwinkle: #bfd1ff;
-  --color-card: #edf1fa;
+  --color-green: #6bb35d;
+  --color-green-bright: #7cc47a;
+  --color-ink: #38322e;
+  --color-body: #6f675f;
+  --color-cloud: #faf6f0;
+  --color-slate: #5f574e;
+  --color-lavender: #ece3d8;
+  --color-periwinkle: #f0d9c9;
+  --color-card: #fbecf1;
+
+  /* Nudge the base reading size 14 → 15px for legibility. */
+  --text-sm: 0.9375rem;
 }
 
 html {
@@ -23,5 +29,28 @@ html {
 body {
   margin: 0;
   color: var(--color-body);
+  background: #ffffff;
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Section + hero headings pick up the softer serif; smaller sub-headings
+   (h3/h4) stay in Figtree so labels don't get heavy. */
+h1,
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

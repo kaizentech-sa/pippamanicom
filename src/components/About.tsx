@@ -1,6 +1,8 @@
 import { Check } from "lucide-react";
-import portrait from "../assets/images/Pippa-Manicom-Portrait.webp";
-import atDesk from "../assets/images/Pippa-at-work-desk.webp";
+import { photos } from "../assets/imagery";
+
+const portrait = photos.portrait;
+const atDesk = photos.atWork;
 
 const QUALIFICATIONS = [
   "BSc in Human Physiology and Psychology (UCT)",
@@ -31,10 +33,10 @@ export default function About() {
       <section id="about" className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           <img
-            src={portrait}
-            alt="Pippa Manicom, registered dietitian in Constantia, Cape Town"
-            width={499}
-            height={750}
+            src={portrait.src}
+            alt={portrait.alt}
+            width={portrait.width}
+            height={portrait.height}
             loading="lazy"
             className="mx-auto w-full max-w-sm rounded-3xl object-cover md:max-w-none"
           />
@@ -44,34 +46,28 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-sm leading-relaxed text-body">
               <p className="font-semibold text-ink">
-                With a passion for health, wellness and food, I am dedicated
-                to helping others to live a healthier life. I offer a
-                holistic approach to nutrition, focusing on sustainable
-                lifestyle changes that promote long-term health and
-                well-being.
+                I'm a registered dietitian with a genuine love of food,
+                health and helping people feel better in their own bodies.
+                My approach is holistic and built around sustainable
+                changes, not quick fixes.
               </p>
               <p>
-                My practice centres around the idea that nutrition doesn't
-                have to be restrictive or overwhelming. Instead, I emphasise
-                balance, helping clients develop healthy habits that fit into
-                their everyday lives.
+                Good nutrition doesn't have to be restrictive or
+                complicated. I focus on balance, and on helping clients
+                build eating habits that actually hold up in a normal week.
               </p>
               <p>
-                As a mother, I understand the challenges of maintaining a
-                healthy diet in a busy household. I offer practical tips and
-                strategies, from meal planning to navigating grocery
-                shopping, making it easier for families to embrace a
-                healthier lifestyle. My approach encourages families to
-                enjoy wholesome, nutritious foods together, making mealtime a
-                time for bonding rather than stress.
+                As a mother, I know first-hand how hard it is to keep a
+                household eating well. I share practical, real-world
+                strategies — from planning meals to getting through the
+                shops — so that families can enjoy wholesome food together
+                without mealtimes becoming a battle.
               </p>
               <p>
-                Whether you're looking to shed some kilos, improve your
-                family's eating habits, or simply feel your best, you'll
-                find a wealth of resources tailored to your needs. My
-                personalised approach takes into account your unique
-                lifestyle, preferences, and challenges, ensuring that we
-                create a path to wellness that works for you.
+                Whether you want to lose weight, sort out the family's
+                eating, or simply feel your best, we'll work from your
+                actual lifestyle, preferences and challenges to find an
+                approach that fits you.
               </p>
             </div>
           </div>
@@ -86,35 +82,34 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-sm leading-relaxed text-body">
               <p className="font-semibold text-ink">
-                Pippa spent the early part of her career working in various
-                hospitals in London (Guys &amp; St Thomas, Kingston Hospital,
-                Epsom &amp; St Heliers Hospitals) where she obtained four
-                years of extensive clinical experience.
+                Pippa began her career in London, working across several
+                hospitals — Guys &amp; St Thomas, Kingston Hospital, and
+                Epsom &amp; St Heliers — where she built up four years of
+                hands-on clinical experience.
               </p>
               <p>
-                She returned to South Africa where she started her own
-                private practice in a Sports Injury Clinic in Johannesburg
-                before moving her practice to home while juggling two small
-                children.
+                Back in South Africa, she opened her own practice in a
+                Johannesburg sports injury clinic, later moving it home
+                while raising two young children.
               </p>
               <p>
-                She has spent many years consulting to a variety of
-                corporations, and consults to executives at Exec Care
-                (Johannesburg and Cape Town).
+                She has consulted to a wide range of companies over the
+                years, and still works with executives at Exec Care in
+                Johannesburg and Cape Town.
               </p>
               <p>
-                In 2023 she moved to Cape Town where she has set up her
+                In 2023 she relocated to Cape Town, where she now runs her
                 practice from home in Constantia.
               </p>
             </div>
           </div>
           <img
-            src={atDesk}
-            alt="Pippa Manicom working at her Constantia dietitian practice, Cape Town"
-            width={750}
-            height={1000}
+            src={atDesk.src}
+            alt={atDesk.alt}
+            width={atDesk.width}
+            height={atDesk.height}
             loading="lazy"
-            className="mx-auto w-4/5 rounded-[3%_3%_3%_40%] object-cover md:w-full"
+            className="mx-auto w-4/5 rounded-3xl object-cover md:w-full"
           />
         </div>
 
@@ -144,11 +139,11 @@ export default function About() {
               Hobbies and Interests
             </h3>
             <p className="text-sm leading-relaxed text-body">
-              Pippa enjoys being active either at the gym or outdoors and
-              loves walking her dog in the greenbelts and mountains. She
-              loves cooking and experimenting with recipes. She has a
-              passion for dancing and used to compete in Latin-American
-              dancing.
+              Outside the practice, Pippa is happiest being active — at the
+              gym, or out walking her dog in the greenbelts and mountains.
+              She loves cooking and playing around with new recipes, and has
+              a long-standing passion for dancing, having once competed in
+              Latin-American.
             </p>
           </div>
         </div>
