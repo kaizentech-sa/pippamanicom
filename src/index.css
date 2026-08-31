@@ -2,23 +2,32 @@
 
 @theme {
   --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
 
-  /* Brand pink is unchanged. Everything around it is warmed up:
-     the cool blue/lavender neutrals become oat / sand / clay. */
+  /* Brand pink stays. The neutral system is botanical now:
+     deep forest green is the ink, warm cream is the paper,
+     sage + sand alternate the sections, honey is the accent. */
   --color-pink: #ec297a;
   --color-pink-dark: #d1236b;
-  --color-green: #6bb35d;
-  --color-green-bright: #7cc47a;
-  --color-ink: #38322e;
-  --color-body: #6f675f;
-  --color-cloud: #faf6f0;
-  --color-slate: #5f574e;
-  --color-lavender: #ece3d8;
-  --color-periwinkle: #f0d9c9;
-  --color-card: #fbecf1;
 
-  /* Nudge the base reading size 14 → 15px for legibility. */
+  --color-ink: #1f3d31; /* forest green — headings, dark UI, dark bands */
+  --color-body: #4c5a52; /* green-grey — body copy */
+  --color-cream: #fbf8f1; /* page ground */
+  --color-sand: #f2ecdf; /* warm alt sections / cards */
+  --color-sage: #e7efe4; /* cool green-tint alt sections / accents */
+  --color-honey: #c8933c; /* decorative accent — dots, rules, markers */
+  --color-honey-bright: #e6b45c; /* accent on dark forest backgrounds */
+  --color-line: #e4dcc9; /* hairlines on cream */
+  --color-green: #45864f; /* leaf / check icons */
+
+  /* legacy names kept as aliases so nothing silently drops */
+  --color-cloud: #f2ecdf;
+  --color-slate: #4c5a52;
+  --color-lavender: #e4dcc9;
+  --color-periwinkle: #d8c49a;
+  --color-card: #e7efe4;
+  --color-green-bright: #4f9a63;
+
   --text-sm: 0.9375rem;
 }
 
@@ -29,18 +38,64 @@ html {
 body {
   margin: 0;
   color: var(--color-body);
-  background: #ffffff;
+  background: var(--color-cream);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Section + hero headings pick up the softer serif; smaller sub-headings
-   (h3/h4) stay in Figtree so labels don't get heavy. */
+/* every heading is Fraunces now */
 h1,
-h2 {
-  font-family: var(--font-serif);
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+}
+
+/* Fraunces italic — the kicker / eyebrow / pull-quote voice
+   (replaces the old pink uppercase-tracked sans label). */
+.eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.0625rem;
+  letter-spacing: 0.01em;
+  color: var(--color-pink-dark);
+}
+
+/* small structural labels stay in Figtree, wide-tracked */
+.label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+/* faint film grain over the whole page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* accent + labels flip lighter on the dark forest bands */
+.bg-ink .label,
+.sprigs .label {
+  color: var(--color-honey-bright);
+}
+
+/* botanical sprig watermark for the dark forest bands */
+.sprigs {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none' stroke='%23ffffff' stroke-width='1.4' stroke-linecap='round' opacity='0.5'%3E%3Cpath d='M20 96C20 60 40 40 74 34'/%3E%3Cpath d='M40 74c-6-6-6-16 0-22 6 6 6 16 0 22Z'/%3E%3Cpath d='M56 58c-6-6-6-16 0-22 6 6 6 16 0 22Z'/%3E%3Cpath d='M72 44c-6-6-6-16 0-22 6 6 6 16 0 22Z'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,8 +1,23 @@
-import { Check } from "lucide-react";
-import { photos } from "../assets/imagery";
+import Photo from "./Photo";
 
-const portrait = photos.portrait;
-const atDesk = photos.atWork;
+const TIMELINE = [
+  {
+    place: "London",
+    text: "Pippa began her career in London, working across several hospitals — Guys & St Thomas, Kingston Hospital, and Epsom & St Heliers — where she built up four years of hands-on clinical experience.",
+  },
+  {
+    place: "Johannesburg",
+    text: "Back in South Africa, she opened her own practice in a Johannesburg sports injury clinic, later moving it home while raising two young children.",
+  },
+  {
+    place: "Corporate practice",
+    text: "She has consulted to a wide range of companies over the years, and still works with executives at Exec Care in Johannesburg and Cape Town.",
+  },
+  {
+    place: "Cape Town · 2023",
+    text: "In 2023 she relocated to Cape Town, where she now runs her practice from home in Constantia.",
+  },
+];
 
 const QUALIFICATIONS = [
   "BSc in Human Physiology and Psychology (UCT)",
@@ -16,133 +31,101 @@ const ASSOCIATIONS = [
   "Association of Dietetics in South Africa (ADSA Gauteng South and Western Cape)",
 ];
 
-function CheckItem({ text }: { text: string }) {
-  return (
-    <li className="flex items-start gap-3">
-      <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-pink text-white">
-        <Check size={10} strokeWidth={3} />
-      </span>
-      <span className="text-sm text-body">{text}</span>
-    </li>
-  );
-}
-
 export default function About() {
   return (
     <>
-      <section id="about" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-          <img
-            src={portrait.src}
-            alt={portrait.alt}
-            width={portrait.width}
-            height={portrait.height}
-            loading="lazy"
-            className="mx-auto w-full max-w-sm rounded-3xl object-cover md:max-w-none"
-          />
-          <div>
-            <h2 className="mb-4 text-3xl font-semibold text-ink">
-              About Pippa
-            </h2>
-            <div className="space-y-4 text-sm leading-relaxed text-body">
-              <p className="font-semibold text-ink">
-                I'm a registered dietitian with a genuine love of food,
-                health and helping people feel better in their own bodies.
-                My approach is holistic and built around sustainable
-                changes, not quick fixes.
+      <section id="about" className="bg-sand">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+          <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
+            <div className="relative">
+              <div className="absolute -left-3 -top-3 hidden h-32 w-32 rounded-full bg-honey/20 md:block" />
+              <Photo
+                imageKey="pippa.portrait"
+                sizes="(min-width: 768px) 38vw, 90vw"
+                className="relative w-full rounded-[1.75rem] border border-line object-cover"
+              />
+            </div>
+            <div>
+              <p className="label">The dietitian</p>
+              <h2 className="mt-3 text-4xl">About Pippa</h2>
+              <p className="mt-5 font-display text-xl leading-snug text-ink">
+                I'm a registered dietitian with a genuine love of food, health
+                and helping people feel better in their own bodies. My approach
+                is holistic and built around sustainable changes, not quick
+                fixes.
               </p>
-              <p>
-                Good nutrition doesn't have to be restrictive or
-                complicated. I focus on balance, and on helping clients
-                build eating habits that actually hold up in a normal week.
-              </p>
-              <p>
-                As a mother, I know first-hand how hard it is to keep a
-                household eating well. I share practical, real-world
-                strategies — from planning meals to getting through the
-                shops — so that families can enjoy wholesome food together
-                without mealtimes becoming a battle.
-              </p>
-              <p>
-                Whether you want to lose weight, sort out the family's
-                eating, or simply feel your best, we'll work from your
-                actual lifestyle, preferences and challenges to find an
-                approach that fits you.
-              </p>
+              <div className="mt-5 space-y-4 text-base text-body md:columns-2 md:gap-10 [&>p]:mb-4">
+                <p>
+                  Good nutrition doesn't have to be restrictive or complicated. I
+                  focus on balance, and on helping clients build eating habits
+                  that actually hold up in a normal week.
+                </p>
+                <p>
+                  As a mother, I know first-hand how hard it is to keep a
+                  household eating well. I share practical, real-world strategies
+                  — from planning meals to getting through the shops — so that
+                  families can enjoy wholesome food together without mealtimes
+                  becoming a battle.
+                </p>
+                <p>
+                  Whether you want to lose weight, sort out the family's eating,
+                  or simply feel your best, we'll work from your actual
+                  lifestyle, preferences and challenges to find an approach that
+                  fits you.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="work" className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+      <section id="work" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+        <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:gap-16">
           <div>
-            <h2 className="mb-4 text-3xl font-semibold text-ink">
-              Work Experience
-            </h2>
-            <div className="space-y-4 text-sm leading-relaxed text-body">
-              <p className="font-semibold text-ink">
-                Pippa began her career in London, working across several
-                hospitals — Guys &amp; St Thomas, Kingston Hospital, and
-                Epsom &amp; St Heliers — where she built up four years of
-                hands-on clinical experience.
-              </p>
-              <p>
-                Back in South Africa, she opened her own practice in a
-                Johannesburg sports injury clinic, later moving it home
-                while raising two young children.
-              </p>
-              <p>
-                She has consulted to a wide range of companies over the
-                years, and still works with executives at Exec Care in
-                Johannesburg and Cape Town.
-              </p>
-              <p>
-                In 2023 she relocated to Cape Town, where she now runs her
-                practice from home in Constantia.
-              </p>
-            </div>
+            <p className="label">Background</p>
+            <h2 className="mt-3 text-4xl">Work experience</h2>
+            <Photo
+              imageKey="pippa.atWork"
+              sizes="(min-width: 768px) 34vw, 90vw"
+              className="mt-8 w-full rounded-[1.75rem] border border-line object-cover"
+            />
           </div>
-          <img
-            src={atDesk.src}
-            alt={atDesk.alt}
-            width={atDesk.width}
-            height={atDesk.height}
-            loading="lazy"
-            className="mx-auto w-4/5 rounded-3xl object-cover md:w-full"
-          />
+
+          <ol className="relative border-l border-line pl-8">
+            {TIMELINE.map((t, i) => (
+              <li key={t.place} className={i === TIMELINE.length - 1 ? "" : "mb-10"}>
+                <span className="absolute -left-[7px] mt-1.5 h-3.5 w-3.5 rounded-full border-2 border-honey bg-cream" />
+                <p className="label">{t.place}</p>
+                <p className="mt-2 text-base text-body">{t.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        <div className="mt-16 flex flex-col gap-16 border-t border-periwinkle/40 pt-12">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-[280px_1fr] md:gap-12">
-            <h3 className="text-lg font-semibold text-ink">
-              Qualifications
-            </h3>
-            <ul className="space-y-3">
+        <div className="mt-16 grid gap-8 border-t border-line pt-12 md:grid-cols-3">
+          <div>
+            <h3 className="text-xl">Qualifications</h3>
+            <ul className="mt-4 space-y-3 text-sm text-body">
               {QUALIFICATIONS.map((q) => (
-                <CheckItem key={q} text={q} />
+                <li key={q} className="border-l-2 border-honey/50 pl-3">{q}</li>
               ))}
             </ul>
           </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-[280px_1fr] md:gap-12">
-            <h3 className="text-lg font-semibold text-ink">
-              Professional Associations
-            </h3>
-            <ul className="space-y-3">
+          <div>
+            <h3 className="text-xl">Professional associations</h3>
+            <ul className="mt-4 space-y-3 text-sm text-body">
               {ASSOCIATIONS.map((a) => (
-                <CheckItem key={a} text={a} />
+                <li key={a} className="border-l-2 border-honey/50 pl-3">{a}</li>
               ))}
             </ul>
           </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-[280px_1fr] md:gap-12">
-            <h3 className="text-lg font-semibold text-ink">
-              Hobbies and Interests
-            </h3>
-            <p className="text-sm leading-relaxed text-body">
-              Outside the practice, Pippa is happiest being active — at the
-              gym, or out walking her dog in the greenbelts and mountains.
-              She loves cooking and playing around with new recipes, and has
-              a long-standing passion for dancing, having once competed in
+          <div>
+            <h3 className="text-xl">Hobbies &amp; interests</h3>
+            <p className="mt-4 text-sm leading-relaxed text-body">
+              Outside the practice, Pippa is happiest being active — at the gym,
+              or out walking her dog in the greenbelts and mountains. She loves
+              cooking and playing around with new recipes, and has a
+              long-standing passion for dancing, having once competed in
               Latin-American.
             </p>
           </div>

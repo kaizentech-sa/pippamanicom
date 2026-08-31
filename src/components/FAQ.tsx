@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { useId, useState } from "react";
 
 const FAQS = [
   {
@@ -34,46 +33,50 @@ const FAQS = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
+  const uid = useId();
 
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="text-center text-3xl font-semibold text-ink">
-        Frequently Asked Questions
-      </h2>
-      <p className="mx-auto mt-3 max-w-xl text-center text-sm text-body">
-        Common questions about booking a dietitian in Cape Town — if yours
-        isn&rsquo;t answered here, just{" "}
-        <a href="#contact" className="font-semibold text-pink hover:text-pink-dark">
-          get in touch
-        </a>
-        .
-      </p>
+    <section id="faq" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+        <div className="md:sticky md:top-28 md:self-start">
+          <p className="label">Good to know</p>
+          <h2 className="mt-3 text-4xl">Frequently asked questions</h2>
+          <p className="mt-4 text-sm text-body">
+            If yours isn&rsquo;t here, just{" "}
+            <a href="#contact" className="font-semibold text-pink-dark hover:text-pink">
+              get in touch
+            </a>
+            .
+          </p>
+        </div>
 
-      <div className="mt-10 divide-y divide-lavender rounded-2xl bg-cloud px-6">
-        {FAQS.map((item, i) => {
-          const isOpen = open === i;
-          return (
-            <div key={item.q}>
-              <button
-                type="button"
-                onClick={() => setOpen(isOpen ? null : i)}
-                aria-expanded={isOpen}
-                className="flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-ink"
-              >
-                {item.q}
-                <ChevronDown
-                  size={18}
-                  className={`shrink-0 text-pink transition-transform ${isOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              {isOpen && (
-                <p className="pb-5 text-sm leading-relaxed text-body">
-                  {item.a}
-                </p>
-              )}
-            </div>
-          );
-        })}
+        <div className="border-t border-line">
+          {FAQS.map((item, i) => {
+            const isOpen = open === i;
+            const panelId = `${uid}-${i}`;
+            return (
+              <div key={item.q} className="border-b border-line">
+                <h3>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    className="flex w-full items-start justify-between gap-5 py-5 text-left font-display text-lg text-ink"
+                  >
+                    {item.q}
+                    <span aria-hidden="true" className="mt-0.5 shrink-0 text-xl leading-none text-ink">
+                      {isOpen ? "–" : "+"}
+                    </span>
+                  </button>
+                </h3>
+                <div id={panelId} hidden={!isOpen}>
+                  <p className="pb-6 text-base leading-relaxed text-body">{item.a}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

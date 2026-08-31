@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import { photos } from "../assets/imagery";
+import { img } from "../assets/imagery";
 
-const logo = photos.logoHeader;
+const logo = img("logo.header");
 
 const NAV_LINKS = [
   { href: "#services", label: "Services" },
@@ -16,75 +16,90 @@ const NAV_LINKS = [
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50 bg-transparent">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <a href="#" className="shrink-0">
+    <header className="sticky top-0 z-50 border-b border-line bg-cream/95 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3 md:px-8">
+        <a href="#top" className="shrink-0" aria-label="Pippa Manicom — home">
           <img
             src={logo.src}
             alt={logo.alt}
             width={logo.width}
             height={logo.height}
-            className="h-24 w-auto md:h-28"
+            className="h-14 w-auto md:h-16"
           />
         </a>
 
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-7 text-base font-medium text-pink">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="transition-colors hover:text-pink-dark">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <a
-          href="tel:+27846167000"
-          className="hidden shrink-0 items-center gap-2 rounded-full bg-pink px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105 lg:flex"
-        >
-          <Phone size={15} />
-          084 616 7000
-        </a>
-
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Main menu toggle"
-          aria-expanded={open}
-          className="text-ink md:hidden"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {open && (
-        <nav className="border-t border-lavender bg-white md:hidden">
-          <ul className="flex flex-col gap-1 px-6 py-4 text-sm font-medium text-pink">
+        <nav className="hidden lg:block" aria-label="Primary">
+          <ul className="flex items-center gap-8 text-[0.95rem] font-medium text-ink">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-2"
+                  className="border-b-2 border-transparent pb-1 transition-colors hover:border-honey hover:text-honey"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
-            <li className="pt-2">
-              <a
-                href="tel:+27846167000"
-                className="flex items-center gap-2 py-2 font-semibold text-ink"
-              >
-                <Phone size={16} className="text-pink" />
-                Call 084 616 7000
-              </a>
-            </li>
           </ul>
         </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href="tel:+27846167000"
+            className="hidden items-center gap-2 rounded-full border border-ink/25 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-cream md:flex"
+          >
+            <Phone size={14} />
+            084 616 7000
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={open}
+            className="text-ink lg:hidden"
+          >
+            <Menu size={26} />
+          </button>
+        </div>
+      </div>
+
+      {open && (
+        <div className="fixed inset-0 z-50 flex flex-col bg-cream lg:hidden">
+          <div className="flex items-center justify-between border-b border-line px-5 py-3">
+            <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} className="h-14 w-auto" />
+            <button type="button" onClick={() => setOpen(false)} aria-label="Close menu" className="text-ink">
+              <X size={26} />
+            </button>
+          </div>
+          <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 px-6 py-8">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="border-b border-line py-4 font-display text-2xl text-ink"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="tel:+27846167000"
+              onClick={() => setOpen(false)}
+              className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream"
+            >
+              <Phone size={15} />
+              Call 084 616 7000
+            </a>
+          </nav>
+        </div>
       )}
     </header>
   );

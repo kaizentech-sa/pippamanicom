@@ -12,7 +12,7 @@ import WhatsAppFab from "./components/WhatsAppFab";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-cream">
       <Header />
       <main>
         <Hero />

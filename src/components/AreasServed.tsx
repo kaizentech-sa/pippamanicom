@@ -1,5 +1,3 @@
-import { MapPin } from "lucide-react";
-
 const AREAS = [
   "Constantia",
   "Tokai",
@@ -20,39 +18,38 @@ const AREAS = [
 
 export default function AreasServed() {
   return (
-    <section id="areas" className="mx-auto max-w-6xl px-6 py-16">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold text-ink">
-          Dietitian Serving Constantia &amp; the Cape Town Southern Suburbs
-        </h2>
-        <p className="mt-4 text-sm leading-relaxed text-body">
-          Pippa Manicom is a registered dietitian based on Willow Road,
-          Constantia, seeing clients in person from across Cape Town&rsquo;s
-          Southern Suburbs, plus online consultations for clients anywhere in
-          South Africa.
-        </p>
+    <section id="areas" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
+      <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">
+        <div>
+          <p className="label">Where I work</p>
+          <h2 className="mt-3 text-4xl">
+            Serving Constantia &amp; the Cape Town Southern Suburbs
+          </h2>
+          <p className="mt-4 text-base text-body">
+            Pippa Manicom is a registered dietitian based on Willow Road,
+            Constantia, seeing clients in person from across Cape Town&rsquo;s
+            Southern Suburbs — plus online consultations for clients anywhere in
+            South Africa.
+          </p>
+          <p className="mt-4 text-sm text-body">
+            Don&rsquo;t see your suburb? Online video consultations mean location
+            is never a barrier —{" "}
+            <a href="#contact" className="font-semibold text-pink-dark hover:text-pink">
+              get in touch
+            </a>
+            .
+          </p>
+        </div>
+
+        <ul className="columns-2 gap-8 border-t border-line pt-6 sm:columns-3 md:border-l md:border-t-0 md:pl-12 md:pt-0">
+          {AREAS.map((area) => (
+            <li key={area} className="mb-3 flex items-center gap-2.5 text-[0.95rem] text-ink">
+              <span className="h-1.5 w-1.5 rounded-full bg-honey" />
+              {area}
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <ul className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-3">
-        {AREAS.map((area) => (
-          <li
-            key={area}
-            className="flex items-center gap-1.5 rounded-full bg-cloud px-4 py-2 text-sm font-medium text-ink"
-          >
-            <MapPin size={14} className="text-pink" />
-            {area}
-          </li>
-        ))}
-      </ul>
-
-      <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-body/70">
-        Don&rsquo;t see your suburb listed? Online video consultations mean
-        location is never a barrier to getting the right nutrition advice —{" "}
-        <a href="#contact" className="font-semibold text-pink hover:text-pink-dark">
-          get in touch
-        </a>
-        .
-      </p>
     </section>
   );
 }

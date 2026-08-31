@@ -1,5 +1,21 @@
-import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Quote } from "lucide-react";
+
+function Card({ t, featured = false }: { t: { text: string; name: string }; featured?: boolean }) {
+  return (
+    <figure className="flex h-full flex-col rounded-[1.5rem] border border-cream/15 bg-cream/[0.04] p-7">
+      <Quote size={featured ? 30 : 24} className="text-honey-bright" />
+      <blockquote
+        className={
+          "mt-4 flex-1 font-display italic leading-relaxed text-cream/90 " +
+          (featured ? "text-lg" : "text-[1rem]")
+        }
+      >
+        {t.text}
+      </blockquote>
+      <figcaption className="mt-5 text-sm font-semibold text-cream">{t.name}</figcaption>
+    </figure>
+  );
+}
 
 const TESTIMONIALS = [
   {
@@ -17,74 +33,23 @@ const TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % TESTIMONIALS.length),
-      6000,
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  const prev = () =>
-    setIndex((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
-  const next = () => setIndex((i) => (i + 1) % TESTIMONIALS.length);
-
-  const current = TESTIMONIALS[index];
-
   return (
-    <section
-      id="testimonials"
-      className="my-12 rounded-[28px] bg-gradient-to-br from-pink/70 to-pink-dark px-6 py-20 text-center text-white"
-    >
-      <h2 className="mb-10 text-3xl font-semibold">
-        What Our Cape Town Clients Say
-      </h2>
+    <section id="testimonials" className="bg-ink text-cream">
+      <div className="sprigs">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+          <p className="label">In their words</p>
+          <h2 className="mt-3 max-w-2xl text-4xl text-cream">
+            What Pippa&rsquo;s Cape Town clients say
+          </h2>
 
-      <div className="mx-auto flex max-w-2xl items-center gap-4">
-        <button
-          type="button"
-          onClick={prev}
-          aria-label="Previous testimonial"
-          className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-        >
-          <ChevronLeft />
-        </button>
-
-        <div className="min-h-[140px] flex-1">
-          <p className="text-sm italic leading-relaxed md:text-base">
-            {current.text}
-          </p>
-          <cite className="mt-4 block text-sm font-semibold not-italic">
-            {current.name}
-          </cite>
+          <div className="mt-12 grid gap-6 md:grid-cols-[1.35fr_1fr]">
+            <Card t={TESTIMONIALS[0]} featured />
+            <div className="grid gap-6">
+              <Card t={TESTIMONIALS[1]} />
+              <Card t={TESTIMONIALS[2]} />
+            </div>
+          </div>
         </div>
-
-        <button
-          type="button"
-          onClick={next}
-          aria-label="Next testimonial"
-          className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-        >
-          <ChevronRight />
-        </button>
-      </div>
-
-      <div className="mt-8 flex justify-center gap-2">
-        {TESTIMONIALS.map((t, i) => (
-          <button
-            key={t.name}
-            type="button"
-            aria-label={`Go to testimonial ${i + 1}`}
-            onClick={() => setIndex(i)}
-            className={
-              "h-2 w-2 rounded-full transition-colors " +
-              (i === index ? "bg-white" : "bg-white/40")
-            }
-          />
-        ))}
       </div>
     </section>
   );

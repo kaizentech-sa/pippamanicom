@@ -25,7 +25,7 @@ for (const w of [390, 768, 1024, 1440]) {
     );
   });
   await p.waitForLoadState("networkidle");
-  await p.waitForTimeout(400);
+  await p.waitForTimeout(1200);
   const of = await p.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
   );

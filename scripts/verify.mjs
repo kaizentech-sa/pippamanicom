@@ -58,7 +58,7 @@ ok("FAQ toggles by keyboard", a1 === "true" && a2 === "false");
 
 // fonts applied
 const h1font = await p.$eval("h1", (e) => getComputedStyle(e).fontFamily);
-const bodyfont = await p.$eval("p", (e) => getComputedStyle(e).fontFamily);
+const bodyfont = await p.$eval("#faq p", (e) => getComputedStyle(e).fontFamily);
 ok(`h1 uses Fraunces (${h1font})`, /fraunces/i.test(h1font));
 ok(`body uses Figtree (${bodyfont})`, /figtree/i.test(bodyfont));
 
