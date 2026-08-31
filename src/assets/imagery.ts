@@ -1,9 +1,9 @@
 /**
  * Single source for every image on the site. Components reference a semantic
- * key, never a file path — swapping any image is a one-line change here.
+ * key, never a file path, so swapping any image is a one-line change here.
  *
- * - Pippa's own photos + the logo: unchanged, owned.
- * - Everything else: licensed stock (Pexels License — free commercial use).
+ * - Pippa's own photos and the logo: unchanged, owned.
+ * - Everything else: licensed stock (Pexels License, free for commercial use).
  *   Sources listed in ./images/stock/CREDITS.md.
  */
 import portrait from "./images/Pippa-Manicom-Portrait.webp";
@@ -67,15 +67,15 @@ export const images = {
   },
 
   "hero.produce": stock(heroProduce, heroProduceSm, 1280, 855,
-    "Fresh vegetables — balanced everyday eating guided by a Cape Town dietitian"),
+    "Fresh vegetables on a marble worktop"),
   "services.private": stock(consult, consultSm, 1280, 1574,
-    "Registered dietitian preparing a personalised weekly meal plan with a client"),
+    "A dietitian and client filling in a weekly meal plan"),
   "services.corporate": stock(corporate, corporateSm, 1280, 960,
-    "Colourful healthy meal-prep containers with falafel, roast vegetables and grains"),
+    "Meal-prep containers with falafel, roast vegetables and grains"),
   "services.talks": stock(talks, talksSm, 1195, 1792,
-    "A colourful vegetable and quinoa bowl — practical, balanced nutrition"),
+    "A colourful vegetable and quinoa bowl"),
   "conditions.food": stock(conditions, conditionsSm, 1280, 854,
-    "Balanced grain bowls — medical nutrition therapy from a Constantia dietitian"),
+    "Two grain bowls with roast vegetables, beans and avocado"),
   "contact.produce": stock(contact, contactSm, 1280, 853,
     "A basket of fresh seasonal vegetables on a wooden bench"),
   "modal.private": stock(bowl, bowlSm, 1280, 853,

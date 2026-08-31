@@ -3,7 +3,7 @@ import Photo from "./Photo";
 const TIMELINE = [
   {
     place: "London",
-    text: "Pippa began her career in London, working across several hospitals — Guys & St Thomas, Kingston Hospital, and Epsom & St Heliers — where she built up four years of hands-on clinical experience.",
+    text: "Pippa started out in London, working four years across Guys & St Thomas, Kingston Hospital and Epsom & St Heliers.",
   },
   {
     place: "Johannesburg",
@@ -11,11 +11,11 @@ const TIMELINE = [
   },
   {
     place: "Corporate practice",
-    text: "She has consulted to a wide range of companies over the years, and still works with executives at Exec Care in Johannesburg and Cape Town.",
+    text: "She has worked with many companies over the years, and still consults to executives at Exec Care in Johannesburg and Cape Town.",
   },
   {
-    place: "Cape Town · 2023",
-    text: "In 2023 she relocated to Cape Town, where she now runs her practice from home in Constantia.",
+    place: "Cape Town, 2023",
+    text: "In 2023 she moved to Cape Town and now runs her practice from home in Constantia.",
   },
 ];
 
@@ -46,32 +46,28 @@ export default function About() {
               />
             </div>
             <div>
-              <p className="label">The dietitian</p>
-              <h2 className="mt-3 text-4xl">About Pippa Manicom, registered dietitian</h2>
+              <p className="label">Meet Pippa</p>
+              <h2 className="mt-3 text-4xl">About Pippa Manicom</h2>
               <p className="mt-5 font-display text-xl leading-snug text-ink">
-                I'm a registered dietitian with a genuine love of food, health
-                and helping people feel better in their own bodies. My approach
-                is holistic and built around sustainable changes, not quick
-                fixes.
+                I'm a registered dietitian, and I love food and cooking. My job
+                is to help you make changes you can actually stick with once the
+                novelty of a new diet wears off.
               </p>
               <div className="mt-5 space-y-4 text-base text-body md:columns-2 md:gap-10 [&>p]:mb-4">
                 <p>
-                  Good nutrition doesn't have to be restrictive or complicated. I
-                  focus on balance, and on helping clients build eating habits
-                  that actually hold up in a normal week.
+                  Eating well isn't meant to be complicated. I focus on balance,
+                  and on habits that survive a normal week.
                 </p>
                 <p>
-                  As a mother, I know first-hand how hard it is to keep a
-                  household eating well. I share practical, real-world strategies
-                  — from planning meals to getting through the shops — so that
-                  families can enjoy wholesome food together without mealtimes
-                  becoming a battle.
+                  As a mother, I know how hard it is to keep a household eating
+                  well. I help with the practical side, from planning meals to
+                  getting through the shops, so family dinners are less of a
+                  battle.
                 </p>
                 <p>
-                  Whether you want to lose weight, sort out the family's eating,
-                  or simply feel your best, we'll work from your actual
-                  lifestyle, preferences and challenges to find an approach that
-                  fits you.
+                  Whether it's weight, the family's eating, or just wanting to
+                  feel better, we start from how you actually live and build from
+                  there.
                 </p>
               </div>
             </div>
@@ -122,11 +118,9 @@ export default function About() {
           <div>
             <h3 className="text-xl">Hobbies &amp; interests</h3>
             <p className="mt-4 text-sm leading-relaxed text-body">
-              Outside the practice, Pippa is happiest being active — at the gym,
-              or out walking her dog in the greenbelts and mountains. She loves
-              cooking and playing around with new recipes, and has a
-              long-standing passion for dancing, having once competed in
-              Latin-American.
+              Pippa keeps active at the gym and outdoors, and walks her dog in
+              the greenbelts and mountains. She likes cooking and trying new
+              recipes. She used to compete in Latin-American dancing.
             </p>
           </div>
         </div>

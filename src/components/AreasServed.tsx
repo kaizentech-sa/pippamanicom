@@ -26,14 +26,13 @@ export default function AreasServed() {
             Serving Constantia &amp; the Cape Town Southern Suburbs
           </h2>
           <p className="mt-4 text-base text-body">
-            Pippa Manicom is a registered dietitian based on Willow Road,
-            Constantia, seeing clients in person from across Cape Town&rsquo;s
-            Southern Suburbs — plus online consultations for clients anywhere in
-            South Africa.
+            Pippa Manicom is a registered dietitian on Willow Road, Constantia.
+            She sees clients in person from across the Southern Suburbs, and
+            online from anywhere in South Africa.
           </p>
           <p className="mt-4 text-sm text-body">
-            Don&rsquo;t see your suburb? Online video consultations mean location
-            is never a barrier —{" "}
+            Don't see your suburb? Online consultations cover the rest of
+            the country, so{" "}
             <a href="#contact" className="font-semibold text-pink-dark hover:text-pink">
               get in touch
             </a>

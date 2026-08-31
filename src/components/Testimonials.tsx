@@ -39,7 +39,7 @@ export default function Testimonials() {
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <p className="label">In their words</p>
           <h2 className="mt-3 max-w-2xl text-4xl text-cream">
-            What Pippa&rsquo;s Cape Town clients say
+            What Pippa's Cape Town clients say
           </h2>
 
           <div className="mt-12 grid items-start gap-6 md:grid-cols-[1.3fr_1fr]">

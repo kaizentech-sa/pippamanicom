@@ -37,7 +37,7 @@ export default function Contact() {
       .filter(Boolean)
       .join("\n");
     window.location.href = `mailto:hello@pippamanicom.co.za?subject=${encodeURIComponent(
-      `Website enquiry — ${name || "new client"}`,
+      `Website enquiry from ${name || "a new client"}`,
     )}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
@@ -50,7 +50,7 @@ export default function Contact() {
             <p className="label">Get started</p>
             <h2 className="mt-3 text-4xl">Book a dietitian consultation</h2>
             <p className="mt-4 max-w-sm text-base text-body">
-              In Constantia, across Cape Town, or online — no referral needed.
+              In Constantia, across Cape Town, or online. No referral needed.
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -79,15 +79,15 @@ export default function Contact() {
               className="mt-10 hidden w-full rounded-[1.5rem] border border-line object-cover md:block"
             />
             <p className="mt-6 text-xs text-body">
-              HPCSA registered · No referral needed · Your information stays private.
+              You don't need a referral, and your details stay private.
             </p>
           </div>
 
           <div className="rounded-[1.5rem] border border-line bg-cream p-6 md:p-8">
             {sent ? (
               <p className="text-base text-body">
-                Thanks for reaching out — your email app should now be open with
-                your message ready to send. Pippa will be in touch soon.
+                Thanks for reaching out. Your email app should open with the
+                message ready to send. Pippa will be in touch soon.
               </p>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">

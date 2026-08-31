@@ -19,7 +19,7 @@ const SERVICES: Service[] = [
   {
     image: "services.private",
     title: "Private Consultations",
-    body: "We start with your life as it actually is — your routine, your budget, the things that get in the way — and build an eating plan that works around them. In person in Constantia, or online.",
+    body: "A plan only works if it fits your actual week. We start from your routine, your budget and whatever usually trips you up. In person in Constantia, or online.",
     modal: "private",
     detail: "Details & Rates",
     book: "Book a Consultation",
@@ -27,7 +27,7 @@ const SERVICES: Service[] = [
   {
     image: "services.corporate",
     title: "Corporate Wellness",
-    body: "More than 20 years working with companies has shown me what helps people eat well around a demanding job. Practical sessions that support a healthier, more productive team.",
+    body: "More than 20 years working with companies has taught me what helps staff eat well around a demanding job. I run practical sessions that fit into a workday.",
     modal: "corporate",
     detail: "Details",
     book: "Book a Wellness Session",
@@ -35,7 +35,7 @@ const SERVICES: Service[] = [
   {
     image: "services.talks",
     title: "Nutrition Talks",
-    body: "Friendly, practical talks on balanced eating for every age group — from primary and high school learners to university students, staff groups and older adults.",
+    body: "Talks on healthy, balanced eating for school learners, university students, staff groups and older adults.",
     book: "Book a Talk",
   },
 ];
@@ -50,7 +50,7 @@ export default function Services() {
         <h2 className="mt-3 text-4xl">Dietitian services in Cape Town</h2>
         <p className="mt-4 text-base text-body">
           Private consultations, corporate wellness programmes and nutrition
-          talks — available in Constantia, across Cape Town, or online.
+          talks, in Constantia, across Cape Town or online.
         </p>
       </header>
 

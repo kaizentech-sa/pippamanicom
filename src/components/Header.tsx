@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-cream/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3 md:px-8">
-        <a href="#top" className="shrink-0" aria-label="Pippa Manicom — registered dietitian, home">
+        <a href="#top" className="shrink-0" aria-label="Pippa Manicom, registered dietitian, home">
           <img
             src={logo.src}
             alt={logo.alt}

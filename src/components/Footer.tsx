@@ -35,8 +35,8 @@ export default function Footer() {
               />
             </span>
             <p className="mt-5 max-w-xs text-sm text-cream/70">
-              Registered dietitian in Constantia, Cape Town — practical, evidence-based
-              nutrition care in person and online.
+              Registered dietitian in Constantia, Cape Town, seeing clients in
+              person and online.
             </p>
             <div className="mt-5 flex gap-3">
               {SOCIALS.map(({ icon: Icon, href, label }) => (
@@ -89,7 +89,7 @@ export default function Footer() {
             <span className="text-cream/80">Serving:</span> Constantia, Tokai,
             Bishopscourt, Meadowridge, Wynberg, Claremont, Kenilworth, Newlands,
             Rondebosch, Plumstead, Bergvliet, Kirstenbosch, Muizenberg, Hout Bay
-            &amp; the greater Cape Town Southern Suburbs — online consultations
+            and the greater Cape Town Southern Suburbs. Online consultations
             available nationwide.
           </p>
           <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">

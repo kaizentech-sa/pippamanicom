@@ -10,12 +10,12 @@
   --color-pink: #ec297a;
   --color-pink-dark: #d1236b;
 
-  --color-ink: #1f3d31; /* forest green — headings, dark UI, dark bands */
-  --color-body: #4c5a52; /* green-grey — body copy */
+  --color-ink: #1f3d31; /* forest green: headings, dark UI, dark bands */
+  --color-body: #4c5a52; /* green-grey body copy */
   --color-cream: #fbf8f1; /* page ground */
   --color-sand: #f2ecdf; /* warm alt sections / cards */
   --color-sage: #e7efe4; /* cool green-tint alt sections / accents */
-  --color-honey: #c8933c; /* decorative accent — dots, rules, markers */
+  --color-honey: #c8933c; /* decorative accent for dots, rules, markers */
   --color-honey-bright: #e6b45c; /* accent on dark forest backgrounds */
   --color-line: #e4dcc9; /* hairlines on cream */
   --color-green: #45864f; /* leaf / check icons */
@@ -54,7 +54,7 @@ h4 {
   color: var(--color-ink);
 }
 
-/* Fraunces italic — the kicker / eyebrow / pull-quote voice
+/* Fraunces italic: the kicker / eyebrow / pull-quote voice
    (replaces the old pink uppercase-tracked sans label). */
 .eyebrow {
   font-family: var(--font-display);

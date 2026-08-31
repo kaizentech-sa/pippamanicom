@@ -2,9 +2,9 @@ import { Salad, HeartPulse, Sprout } from "lucide-react";
 import Photo from "./Photo";
 
 const PILLARS = [
-  { icon: HeartPulse, title: "Health", desc: "Body and mind, together" },
-  { icon: Sprout, title: "Wellness", desc: "Habits that actually stick" },
-  { icon: Salad, title: "Food", desc: "Real meals, no fad diets" },
+  { icon: HeartPulse, title: "Health", desc: "Physical and mental" },
+  { icon: Sprout, title: "Wellness", desc: "Sustainable habits" },
+  { icon: Salad, title: "Food", desc: "Balanced, everyday meals" },
 ];
 
 const BADGES = ["HPCSA registered", "20+ years' experience", "UCT qualified"];
@@ -20,9 +20,9 @@ export default function Hero() {
               Nutrition care that fits your real life
             </h1>
             <p className="mt-5 max-w-md text-base text-body">
-              Evidence-based, one-on-one care from a registered dietitian in
-              Constantia — for weight, medical conditions and everyday eating,
-              in person or online across South Africa.
+              One-on-one, evidence-based care from a registered dietitian in
+              Constantia. Weight, medical conditions, everyday eating. In person
+              or online, anywhere in South Africa.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">

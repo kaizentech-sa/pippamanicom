@@ -22,9 +22,8 @@ export default function Conditions() {
             <p className="label">How I can help</p>
             <h2 className="mt-3 text-4xl">Medical conditions a dietitian can help with</h2>
             <p className="mt-4 max-w-lg text-base text-body">
-              Pippa offers evidence-based, personalised nutrition care for a wide
-              range of medical conditions and everyday health goals. Common
-              reasons people come to see her:
+              People come to Pippa with all sorts of things. Some of the most
+              common:
             </p>
           </div>
           <div className="overflow-hidden rounded-[1.75rem] border border-line bg-sage">

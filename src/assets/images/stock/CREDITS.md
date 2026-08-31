@@ -1,6 +1,6 @@
 # Stock imagery
 
-Source: Pexels (Pexels License — free for commercial use, no attribution required).
+Source: Pexels (Pexels License, free for commercial use, no attribution required).
 
 - hero-produce: https://www.pexels.com/photo/3987348/  (1800×1202 source)
 - consult: https://www.pexels.com/photo/15319046/  (1800×2213 source)

@@ -1,4 +1,5 @@
 import { useId, useState } from "react";
+import { Plus, Minus } from "lucide-react";
 
 const FAQS = [
   {
@@ -27,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How do I book an appointment?",
-    a: "Simply fill in the contact form below, WhatsApp or call 084 616 7000, or email hello@pippamanicom.co.za — Pippa will get back to you to confirm a time that suits you.",
+    a: "Fill in the contact form below, WhatsApp or call 084 616 7000, or email hello@pippamanicom.co.za. Pippa will get back to you to confirm a time that suits you.",
   },
 ];
 
@@ -42,7 +43,7 @@ export default function FAQ() {
           <p className="label">Good to know</p>
           <h2 className="mt-3 text-4xl">Frequently asked questions</h2>
           <p className="mt-4 text-sm text-body">
-            If yours isn&rsquo;t here, just{" "}
+            If yours isn't here, just{" "}
             <a href="#contact" className="font-semibold text-pink-dark hover:text-pink">
               get in touch
             </a>
@@ -65,8 +66,8 @@ export default function FAQ() {
                     className="flex w-full items-start justify-between gap-5 py-5 text-left font-display text-lg text-ink"
                   >
                     {item.q}
-                    <span aria-hidden="true" className="mt-0.5 shrink-0 text-xl leading-none text-ink">
-                      {isOpen ? "–" : "+"}
+                    <span aria-hidden="true" className="mt-1 shrink-0 text-ink">
+                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                     </span>
                   </button>
                 </h3>
