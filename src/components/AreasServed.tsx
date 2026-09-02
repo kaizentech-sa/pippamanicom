@@ -20,8 +20,8 @@ const AREAS = [
 
 export default function AreasServed() {
   return (
-    <section id="areas" className="px-4 py-12 md:py-16">
-      <div className="mx-auto max-w-6xl rounded-[40px] bg-cloud px-6 py-14 md:rounded-[56px] md:px-14 md:py-16">
+    <section id="areas" className="bg-cloud py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
           <div>
             <h2 className="text-3xl font-semibold text-ink md:text-[36px] md:leading-tight">

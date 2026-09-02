@@ -17,8 +17,11 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="px-4 py-8 md:py-12">
-      <div className="mx-auto max-w-6xl rounded-[40px] bg-gradient-to-br from-pink/65 to-pink-dark px-6 py-16 text-white md:rounded-[56px] md:px-14 md:py-20">
+    <section
+      id="testimonials"
+      className="bg-gradient-to-br from-pink/65 to-pink-dark py-16 text-white md:py-24"
+    >
+      <div className="mx-auto max-w-6xl px-6">
         <h2 className="max-w-md text-3xl font-semibold md:text-[40px] md:leading-tight">
           What Our Cape Town Clients Say
         </h2>
