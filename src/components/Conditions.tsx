@@ -1,4 +1,5 @@
-import Photo from "./Photo";
+import WatermelonIcon from "./WatermelonIcon";
+import kiwi from "../assets/images/Kiwi-Fruits.webp";
 
 const CONDITIONS = [
   "Weight Management (loss or gain)",
@@ -15,34 +16,38 @@ const CONDITIONS = [
 
 export default function Conditions() {
   return (
-    <section id="conditions" className="scroll-mt-24 bg-sage">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-        <div className="grid items-end gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
-          <div>
-            <p className="label">How I can help</p>
-            <h2 className="mt-3 text-4xl">Medical conditions a dietitian can help with</h2>
-            <p className="mt-4 max-w-lg text-base text-body">
-              People come to Pippa with all sorts of things. Some of the most
-              common:
-            </p>
-          </div>
-          <div className="overflow-hidden rounded-[1.75rem] border border-line bg-sage">
-            <Photo
-              imageKey="conditions.food"
-              sizes="(min-width: 768px) 40vw, 90vw"
-              className="aspect-[16/10] w-full object-cover"
-            />
-          </div>
+    <section id="conditions" className="mx-auto max-w-6xl px-6 py-16">
+      <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <div>
+          <h2 className="text-3xl font-semibold text-ink">
+            Medical Conditions &amp; Lifestyle Needs
+          </h2>
+          <h3 className="mt-2 text-xl font-medium text-ink">
+            Pippa can help with:
+          </h3>
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-body">
+            As a registered dietitian in Cape Town, Pippa provides
+            evidence-based, personalised nutrition therapy for a wide range
+            of medical conditions and lifestyle goals, including:
+          </p>
+          <img
+            src={kiwi}
+            alt="Fresh kiwi fruit - healthy nutrition guidance from a Cape Town dietitian"
+            width={675}
+            height={395}
+            loading="lazy"
+            className="mt-8 hidden w-4/5 rounded-[40px] md:block"
+          />
         </div>
 
-        <ul className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {CONDITIONS.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-3 rounded-xl border border-line bg-cream px-4 py-3.5 text-[0.95rem] text-ink"
-            >
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-honey" />
-              {item}
+        <ul className="space-y-8">
+          {CONDITIONS.map((item, i) => (
+            <li key={item} className="flex items-center gap-4">
+              <WatermelonIcon
+                color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
+                size={30}
+              />
+              <span className="text-lg text-ink">{item}</span>
             </li>
           ))}
         </ul>

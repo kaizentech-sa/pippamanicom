@@ -1,92 +1,70 @@
-import { Salad, HeartPulse, Sprout } from "lucide-react";
-import Photo from "./Photo";
+import { Stethoscope, Flower2, Apple, BadgeCheck } from "lucide-react";
+import heroBg from "../assets/images/Pippa-Manicom.webp";
 
-const PILLARS = [
-  { icon: HeartPulse, title: "Health", desc: "Physical and mental" },
-  { icon: Sprout, title: "Wellness", desc: "Sustainable habits" },
-  { icon: Salad, title: "Food", desc: "Balanced, everyday meals" },
+const FEATURES = [
+  { icon: Stethoscope, title: "Health", desc: "Physical and mental" },
+  { icon: Flower2, title: "Wellness", desc: "Inside and out" },
+  { icon: Apple, title: "Food", desc: "Optimal nutrition" },
 ];
 
-const BADGES = ["HPCSA registered", "20+ years' experience", "UCT qualified"];
+const TRUST_BADGES = [
+  "HPCSA Registered Dietitian",
+  "20+ Years Experience",
+  "UCT Qualified",
+];
 
 export default function Hero() {
   return (
     <>
-      <section id="top" className="scroll-mt-24" aria-label="Pippa Manicom, registered dietitian in Constantia, Cape Town">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-24 md:px-8 md:pb-20 md:pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          <div>
-            <p className="eyebrow">Registered dietitian · Constantia, Cape Town</p>
-            <h1 className="mt-4 text-[2.5rem] leading-[1.06] sm:max-w-[15ch] sm:text-5xl lg:text-[3.35rem]">
-              Nutrition care that fits your real life
-            </h1>
-            <p className="mt-5 max-w-md text-base text-body">
-              One-on-one, evidence-based care from a registered dietitian in
-              Constantia. Weight, medical conditions, everyday eating. In person
-              or online, anywhere in South Africa.
+      <section
+        aria-label="Pippa Manicom, registered dietitian in Constantia, Cape Town"
+        className="relative flex min-h-[70vh] items-center overflow-hidden rounded-b-[56px] bg-cover bg-[position:center_right] pt-20 md:min-h-[88vh] md:rounded-b-[80px]"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-lavender via-lavender/60 to-transparent" />
+
+        <div className="relative mx-auto w-full max-w-6xl px-6 py-16 md:py-24">
+          <div className="max-w-4xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-pink">
+              Registered Dietitian in Constantia, Cape Town
             </p>
+            <h1 className="text-4xl font-semibold leading-tight text-ink md:text-[52px]">
+              Your journey to healthy living starts here
+            </h1>
+            <a
+              href="#contact"
+              className="mt-6 inline-block rounded-full bg-pink px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-transform hover:scale-105"
+            >
+              Book a Consultation
+            </a>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
-                className="rounded-full bg-pink-dark px-7 py-3 text-sm font-semibold text-white transition-all hover:brightness-110"
-              >
-                Book a consultation
-              </a>
-              <a
-                href="tel:+27846167000"
-                className="rounded-full border border-ink/30 px-7 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-cream"
-              >
-                Call 084 616 7000
-              </a>
-            </div>
-
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-5 text-sm text-body">
-              {BADGES.map((b) => (
-                <li key={b} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-honey" />
-                  {b}
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+              {TRUST_BADGES.map((badge) => (
+                <li
+                  key={badge}
+                  className="flex items-center gap-1.5 text-sm font-medium text-ink"
+                >
+                  <BadgeCheck size={16} className="text-green" />
+                  {badge}
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* photo collage */}
-          <div className="relative mx-auto mt-4 w-full max-w-sm sm:max-w-md lg:mt-0 lg:max-w-none">
-            <div className="absolute -right-5 -top-6 h-40 w-40 rounded-full bg-honey/25 sm:h-52 sm:w-52" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-line bg-sage">
-              <Photo
-                imageKey="pippa.portrait"
-                priority
-                sizes="(min-width: 1024px) 42vw, 90vw"
-                className="aspect-[4/5] w-full object-cover object-top"
-              />
-            </div>
-            <div className="absolute -bottom-7 -left-5 w-40 overflow-hidden rounded-2xl border-4 border-cream shadow-xl sm:-left-9 sm:w-56">
-              <Photo
-                imageKey="hero.produce"
-                sizes="224px"
-                className="aspect-[5/4] w-full object-cover"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* pillars band */}
-      <div className="bg-ink text-cream">
-        <div className="sprigs">
-          <ul className="mx-auto grid max-w-6xl gap-px px-5 md:grid-cols-3 md:px-8">
-            {PILLARS.map(({ icon: Icon, title, desc }) => (
-              <li key={title} className="flex items-center gap-4 py-6 md:justify-center md:border-l md:border-cream/15 md:first:border-l-0">
-                <Icon size={26} className="shrink-0 text-honey" />
-                <div>
-                  <p className="font-display text-lg text-cream">{title}</p>
-                  <p className="text-sm text-cream/70">{desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-12 sm:grid-cols-3 md:py-16">
+        {FEATURES.map(({ icon: Icon, title, desc }) => (
+          <div key={title} className="flex items-start gap-4">
+            <span className="flex shrink-0 items-center justify-center rounded-full bg-cloud p-3.5 text-green">
+              <Icon size={24} />
+            </span>
+            <div>
+              <h3 className="mb-1 font-semibold text-ink">{title}</h3>
+              <p className="text-sm text-body">{desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );

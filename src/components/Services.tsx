@@ -1,104 +1,111 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
 import ServiceModal from "./ServiceModal";
-import Photo from "./Photo";
-import type { ImageKey } from "../assets/imagery";
-
-type ModalKey = "private" | "corporate";
-
-interface Service {
-  image: ImageKey;
-  title: string;
-  body: string;
-  modal?: ModalKey;
-  detail?: string;
-  book: string;
-}
-
-const SERVICES: Service[] = [
-  {
-    image: "services.private",
-    title: "Private Consultations",
-    body: "A plan only works if it fits your actual week. We start from your routine, your budget and whatever usually trips you up. In person in Constantia, or online.",
-    modal: "private",
-    detail: "Details & Rates",
-    book: "Book a Consultation",
-  },
-  {
-    image: "services.corporate",
-    title: "Corporate Wellness",
-    body: "More than 20 years working with companies has taught me what helps staff eat well around a demanding job. I run practical sessions that fit into a workday.",
-    modal: "corporate",
-    detail: "Details",
-    book: "Book a Wellness Session",
-  },
-  {
-    image: "services.talks",
-    title: "Nutrition Talks",
-    body: "Talks on healthy, balanced eating for school learners, university students, staff groups and older adults.",
-    book: "Book a Talk",
-  },
-];
+import lemons from "../assets/images/Pippa-Manicom-Lemons.webp";
+import protein from "../assets/images/Pippa-.webp";
+import avocados from "../assets/images/Pippa-Manicom-Avocados.webp";
+import limes from "../assets/images/Limes.webp";
+import blueberries from "../assets/images/Blueberrues.webp";
 
 export default function Services() {
-  const [modal, setModal] = useState<ModalKey | null>(null);
+  const [modal, setModal] = useState<"private" | "corporate" | null>(null);
 
   return (
-    <section id="services" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-      <header className="max-w-2xl">
-        <p className="label">What I do</p>
-        <h2 className="mt-3 text-4xl">Dietitian services in Cape Town</h2>
-        <p className="mt-4 text-base text-body">
+    <section id="services" className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="text-3xl font-semibold text-ink">
+          Dietitian Services in Cape Town
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-body">
           Private consultations, corporate wellness programmes and nutrition
-          talks, in Constantia, across Cape Town or online.
+          talks — available in Constantia, across Cape Town, or online.
         </p>
-      </header>
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div
+          role="img"
+          aria-label="Fresh lemons - private nutrition consultations"
+          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
+          style={{ backgroundImage: `url(${lemons})` }}
+        >
+          <h3 className="mb-2 text-lg font-semibold text-ink">
+            Private Consultations
+          </h3>
+          <p className="mb-4 text-sm text-body">
+            My personalised approach takes into account your unique
+            lifestyle, preferences, and challenges, ensuring that we create a
+            path to wellness that works for you, can be done in person or
+            online.
+          </p>
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
+            <button
+              type="button"
+              onClick={() => setModal("private")}
+              className="uppercase text-green"
+            >
+              Details &amp; Rates
+            </button>
+            <a href="#contact" className="text-pink">
+              Book a Consultation
+            </a>
+          </div>
+        </div>
 
-      <div className="mt-14 space-y-14 md:space-y-16">
-        {SERVICES.map((s, i) => (
-          <article
-            key={s.title}
-            className="grid items-center gap-8 md:grid-cols-[1fr_1fr] md:gap-14"
-          >
-            <div className={`overflow-hidden rounded-[1.75rem] border border-line bg-sage ${i % 2 ? "md:order-2" : ""}`}>
-              <Photo
-                imageKey={s.image}
-                sizes="(min-width: 768px) 45vw, 90vw"
-                className="aspect-[5/4] w-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="label">0{i + 1}</p>
-              <h3 className="mt-2 text-3xl">{s.title}</h3>
-              <p className="mt-4 max-w-md text-base text-body">{s.body}</p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-semibold">
-                {s.modal && (
-                  <button
-                    type="button"
-                    onClick={() => setModal(s.modal!)}
-                    className="text-ink underline decoration-honey underline-offset-4 hover:text-pink-dark"
-                  >
-                    {s.detail}
-                  </button>
-                )}
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-1.5 text-pink-dark hover:text-pink"
-                >
-                  {s.book}
-                  <ArrowRight size={15} />
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
+        <div
+          role="img"
+          aria-label="Corporate wellness nutrition programme"
+          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
+          style={{ backgroundImage: `url(${protein})` }}
+        >
+          <h3 className="mb-2 text-lg font-semibold text-ink">
+            Corporate Wellness
+          </h3>
+          <p className="mb-4 text-sm text-body">
+            With over 20 years of experience in working with corporates, I
+            understand the challenges of keeping a work-life balance. I can
+            help increase productivity in a healthier, happier working
+            environment.
+          </p>
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
+            <button
+              type="button"
+              onClick={() => setModal("corporate")}
+              className="uppercase text-pink"
+            >
+              Details
+            </button>
+            <a href="#contact" className="text-green">
+              Book a Wellness Session
+            </a>
+          </div>
+        </div>
+
+        <div
+          role="img"
+          aria-label="Nutrition talks and presentations"
+          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
+          style={{ backgroundImage: `url(${avocados})` }}
+        >
+          <h3 className="mb-2 text-lg font-semibold text-ink">
+            Nutrition Talks
+          </h3>
+          <p className="mb-4 text-sm text-body">
+            Talks and presentations are available for all age groups - from
+            primary and high school students to university students and
+            older adults - on topics related to healthy, balanced eating.
+          </p>
+          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
+            <a href="#contact" className="text-pink">
+              Book a Talk
+            </a>
+          </div>
+        </div>
       </div>
 
       <ServiceModal
         open={modal === "private"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image="modal.private"
+        image={limes}
       >
         <ul className="list-disc space-y-3 pl-5">
           <li>
@@ -132,7 +139,7 @@ export default function Services() {
         open={modal === "corporate"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image="modal.corporate"
+        image={blueberries}
       >
         <ul className="list-disc space-y-2 pl-5">
           <li>One-on-one consultations in the office environment</li>
