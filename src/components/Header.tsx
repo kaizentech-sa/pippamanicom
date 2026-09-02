@@ -38,7 +38,7 @@ export default function Header() {
             width={500}
             height={288}
             className={`w-auto transition-all duration-300 ${
-              scrolled ? "h-14 md:h-16" : "h-20 md:h-24"
+              scrolled ? "h-16 md:h-20" : "h-24 md:h-32"
             }`}
           />
         </a>

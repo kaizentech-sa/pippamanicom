@@ -18,15 +18,15 @@ export default function Hero() {
     <>
       <section
         aria-label="Pippa Manicom, registered dietitian in Constantia, Cape Town"
-        className="relative flex min-h-[78vh] items-center overflow-hidden rounded-b-[56px] bg-cover bg-[position:center_right] pt-24 md:min-h-[92vh] md:rounded-b-[80px]"
+        className="relative flex min-h-[78vh] items-center overflow-hidden rounded-b-[56px] bg-cover bg-[position:center_right] pt-32 md:min-h-[92vh] md:rounded-b-[80px]"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-lavender via-lavender/80 to-lavender/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-lavender via-lavender/85 to-lavender/45 md:via-lavender/80 md:to-lavender/10" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-lavender to-transparent" />
 
         <div className="relative mx-auto w-full max-w-6xl px-6 py-16 md:py-24">
           <div className="max-w-xl">
-            <p className="mb-4 inline-flex rounded-full bg-white/75 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-pink md:text-xs md:tracking-[0.14em]">
+            <p className="mb-4 inline-flex rounded-full bg-white/75 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.05em] text-pink md:text-xs md:tracking-[0.14em]">
               Registered Dietitian in Constantia, Cape Town
             </p>
             <h1 className="text-4xl font-semibold leading-[1.08] text-ink md:text-[56px]">
