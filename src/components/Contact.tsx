@@ -71,7 +71,7 @@ export default function Contact() {
                   {...(external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="flex items-center gap-3 rounded-2xl bg-white px-5 py-3.5 text-sm font-semibold text-ink shadow-sm transition-shadow hover:shadow-md"
+                  className="flex items-center gap-3 rounded-2xl border border-lavender bg-white px-5 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-pink/40"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cloud">
                     <Icon size={16} className={iconClass} />
@@ -88,7 +88,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="rounded-[32px] bg-white p-7 shadow-[0_18px_60px_rgba(43,47,56,0.12)] md:p-10">
+        <div className="rounded-[32px] border border-lavender bg-white p-7 md:p-10">
           {sent ? (
             <div className="py-10 text-center text-body">
               Thanks for reaching out — Pippa will be in touch soon.
