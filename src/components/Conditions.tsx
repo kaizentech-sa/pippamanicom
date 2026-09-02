@@ -16,13 +16,13 @@ const CONDITIONS = [
 
 export default function Conditions() {
   return (
-    <section id="conditions" className="mx-auto max-w-6xl px-6 py-16">
-      <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+    <section id="conditions" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_1fr] md:gap-16">
         <div>
-          <h2 className="text-3xl font-semibold text-ink">
+          <h2 className="text-3xl font-semibold text-ink md:text-[40px] md:leading-tight">
             Medical Conditions &amp; Lifestyle Needs
           </h2>
-          <h3 className="mt-2 text-xl font-medium text-ink">
+          <h3 className="mt-3 text-xl font-medium text-pink">
             Pippa can help with:
           </h3>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-body">
@@ -30,28 +30,32 @@ export default function Conditions() {
             evidence-based, personalised nutrition therapy for a wide range
             of medical conditions and lifestyle goals, including:
           </p>
-          <img
-            src={kiwi}
-            alt="Fresh kiwi fruit - healthy nutrition guidance from a Cape Town dietitian"
-            width={675}
-            height={395}
-            loading="lazy"
-            className="mt-8 hidden w-4/5 rounded-[40px] md:block"
-          />
         </div>
 
-        <ul className="space-y-8">
-          {CONDITIONS.map((item, i) => (
-            <li key={item} className="flex items-center gap-4">
-              <WatermelonIcon
-                color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
-                size={30}
-              />
-              <span className="text-lg text-ink">{item}</span>
-            </li>
-          ))}
-        </ul>
+        <img
+          src={kiwi}
+          alt="Fresh kiwi fruit - healthy nutrition guidance from a Cape Town dietitian"
+          width={675}
+          height={395}
+          loading="lazy"
+          className="hidden w-full rounded-[40px] object-cover md:block"
+        />
       </div>
+
+      <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {CONDITIONS.map((item, i) => (
+          <li
+            key={item}
+            className="flex items-center gap-4 rounded-2xl border border-lavender bg-white px-5 py-4 transition-colors hover:border-pink/40 hover:bg-cloud"
+          >
+            <WatermelonIcon
+              color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
+              size={28}
+            />
+            <span className="text-base text-ink">{item}</span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

@@ -21,8 +21,8 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-3">
+    <footer className="bg-cloud">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-16 md:grid-cols-[1.2fr_1fr_1fr] md:gap-12">
         <div>
           <img
             src={logo}
@@ -30,12 +30,9 @@ export default function Footer() {
             width={500}
             height={288}
             loading="lazy"
-            className="h-40 w-auto"
+            className="h-32 w-auto"
           />
-        </div>
-
-        <div>
-          <div className="mb-6 flex gap-3">
+          <div className="mt-6 flex gap-3">
             {SOCIALS.map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
@@ -49,20 +46,17 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <h3 className="mb-3 text-lg font-semibold text-ink">
-            More Information
-          </h3>
-          <a href="/privacy-policy" className="text-sm text-slate hover:text-pink">
-            Privacy Policy
-          </a>
         </div>
 
         <div>
-          <h3 className="mb-3 text-lg font-semibold text-ink">Contact</h3>
+          <h3 className="mb-4 text-lg font-semibold text-ink">Contact</h3>
           <address className="space-y-2 text-sm not-italic text-slate">
             <p>
               <span className="font-semibold text-ink">Email: </span>
-              <a href="mailto:hello@pippamanicom.co.za" className="hover:text-pink">
+              <a
+                href="mailto:hello@pippamanicom.co.za"
+                className="hover:text-pink"
+              >
                 hello@pippamanicom.co.za
               </a>
             </p>
@@ -78,10 +72,22 @@ export default function Footer() {
             </p>
           </address>
         </div>
+
+        <div>
+          <h3 className="mb-4 text-lg font-semibold text-ink">
+            More Information
+          </h3>
+          <a
+            href="/privacy-policy"
+            className="text-sm text-slate hover:text-pink"
+          >
+            Privacy Policy
+          </a>
+        </div>
       </div>
 
       <div className="border-t border-lavender">
-        <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs text-slate md:text-left">
+        <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs leading-relaxed text-slate md:text-left">
           <p>
             <span className="font-semibold text-ink">Serving: </span>
             Constantia, Tokai, Bishopscourt, Meadowridge, Wynberg, Claremont,
@@ -99,12 +105,12 @@ export default function Footer() {
             Dietician
           </p>
           <p>
-            Made with <span className="text-pink">❤</span> by{" "}
+            Designed and developed by{" "}
             <a
               href="https://www.kaizentech.co.za"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-ink hover:text-pink"
+              className="font-semibold text-ink hover:text-pink"
             >
               Kaizen Technology
             </a>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 const FAQS = [
   {
@@ -36,44 +36,54 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="text-center text-3xl font-semibold text-ink">
-        Frequently Asked Questions
-      </h2>
-      <p className="mx-auto mt-3 max-w-xl text-center text-sm text-body">
-        Common questions about booking a dietitian in Cape Town — if yours
-        isn&rsquo;t answered here, just{" "}
-        <a href="#contact" className="font-semibold text-pink hover:text-pink-dark">
-          get in touch
-        </a>
-        .
-      </p>
+    <section id="faq" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">
+        <div className="md:sticky md:top-32 md:self-start">
+          <h2 className="text-3xl font-semibold text-ink md:text-[40px] md:leading-tight">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-body">
+            Common questions about booking a dietitian in Cape Town — if yours
+            isn&rsquo;t answered here, just{" "}
+            <a
+              href="#contact"
+              className="font-semibold text-pink hover:text-pink-dark"
+            >
+              get in touch
+            </a>
+            .
+          </p>
+        </div>
 
-      <div className="mt-10 divide-y divide-lavender rounded-2xl bg-cloud px-6">
-        {FAQS.map((item, i) => {
-          const isOpen = open === i;
-          return (
-            <div key={item.q}>
-              <button
-                type="button"
-                onClick={() => setOpen(isOpen ? null : i)}
-                aria-expanded={isOpen}
-                className="flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-ink"
-              >
-                {item.q}
-                <ChevronDown
-                  size={18}
-                  className={`shrink-0 text-pink transition-transform ${isOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              {isOpen && (
-                <p className="pb-5 text-sm leading-relaxed text-body">
-                  {item.a}
-                </p>
-              )}
-            </div>
-          );
-        })}
+        <div className="divide-y divide-lavender border-y border-lavender">
+          {FAQS.map((item, i) => {
+            const isOpen = open === i;
+            return (
+              <div key={item.q}>
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-5 py-5 text-left text-base font-semibold text-ink transition-colors hover:text-pink"
+                >
+                  {item.q}
+                  <span
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors ${
+                      isOpen ? "bg-pink text-white" : "bg-lavender text-pink"
+                    }`}
+                  >
+                    {isOpen ? <Minus size={15} /> : <Plus size={15} />}
+                  </span>
+                </button>
+                {isOpen && (
+                  <p className="pb-5 pr-12 text-sm leading-relaxed text-body">
+                    {item.a}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

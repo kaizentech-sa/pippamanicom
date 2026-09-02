@@ -6,99 +6,114 @@ import avocados from "../assets/images/Pippa-Manicom-Avocados.webp";
 import limes from "../assets/images/Limes.webp";
 import blueberries from "../assets/images/Blueberrues.webp";
 
+type Service = {
+  image: string;
+  alt: string;
+  title: string;
+  desc: string;
+  modal?: "private" | "corporate";
+  detailsLabel?: string;
+  detailsClass?: string;
+  cta: string;
+  ctaClass: string;
+};
+
+const SERVICES: Service[] = [
+  {
+    image: lemons,
+    alt: "Fresh lemons - private nutrition consultations",
+    title: "Private Consultations",
+    desc: "My personalised approach takes into account your unique lifestyle, preferences, and challenges, ensuring that we create a path to wellness that works for you, can be done in person or online.",
+    modal: "private",
+    detailsLabel: "Details & Rates",
+    detailsClass: "text-green",
+    cta: "Book a Consultation",
+    ctaClass: "bg-pink text-white hover:bg-pink-dark",
+  },
+  {
+    image: protein,
+    alt: "Corporate wellness nutrition programme",
+    title: "Corporate Wellness",
+    desc: "With over 20 years of experience in working with corporates, I understand the challenges of keeping a work-life balance. I can help increase productivity in a healthier, happier working environment.",
+    modal: "corporate",
+    detailsLabel: "Details",
+    detailsClass: "text-pink",
+    cta: "Book a Wellness Session",
+    ctaClass: "bg-green text-white hover:bg-green-bright",
+  },
+  {
+    image: avocados,
+    alt: "Nutrition talks and presentations",
+    title: "Nutrition Talks",
+    desc: "Talks and presentations are available for all age groups - from primary and high school students to university students and older adults - on topics related to healthy, balanced eating.",
+    cta: "Book a Talk",
+    ctaClass: "bg-pink text-white hover:bg-pink-dark",
+  },
+];
+
 export default function Services() {
   const [modal, setModal] = useState<"private" | "corporate" | null>(null);
 
   return (
-    <section id="services" className="mx-auto max-w-6xl px-6 py-16">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold text-ink">
+    <section id="services" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+      <div className="grid grid-cols-1 gap-6 border-b border-lavender pb-10 md:grid-cols-[1fr_1fr] md:items-end md:gap-16">
+        <h2 className="text-3xl font-semibold text-ink md:text-[40px] md:leading-tight">
           Dietitian Services in Cape Town
         </h2>
-        <p className="mt-3 text-sm leading-relaxed text-body">
+        <p className="text-sm leading-relaxed text-body md:pb-2">
           Private consultations, corporate wellness programmes and nutrition
           talks — available in Constantia, across Cape Town, or online.
         </p>
       </div>
-      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-        <div
-          role="img"
-          aria-label="Fresh lemons - private nutrition consultations"
-          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
-          style={{ backgroundImage: `url(${lemons})` }}
-        >
-          <h3 className="mb-2 text-lg font-semibold text-ink">
-            Private Consultations
-          </h3>
-          <p className="mb-4 text-sm text-body">
-            My personalised approach takes into account your unique
-            lifestyle, preferences, and challenges, ensuring that we create a
-            path to wellness that works for you, can be done in person or
-            online.
-          </p>
-          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
-            <button
-              type="button"
-              onClick={() => setModal("private")}
-              className="uppercase text-green"
-            >
-              Details &amp; Rates
-            </button>
-            <a href="#contact" className="text-pink">
-              Book a Consultation
-            </a>
-          </div>
-        </div>
 
-        <div
-          role="img"
-          aria-label="Corporate wellness nutrition programme"
-          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
-          style={{ backgroundImage: `url(${protein})` }}
-        >
-          <h3 className="mb-2 text-lg font-semibold text-ink">
-            Corporate Wellness
-          </h3>
-          <p className="mb-4 text-sm text-body">
-            With over 20 years of experience in working with corporates, I
-            understand the challenges of keeping a work-life balance. I can
-            help increase productivity in a healthier, happier working
-            environment.
-          </p>
-          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
-            <button
-              type="button"
-              onClick={() => setModal("corporate")}
-              className="uppercase text-pink"
-            >
-              Details
-            </button>
-            <a href="#contact" className="text-green">
-              Book a Wellness Session
-            </a>
-          </div>
-        </div>
+      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {SERVICES.map((service, i) => (
+          <article
+            key={service.title}
+            className="group flex flex-col overflow-hidden rounded-[28px] bg-cloud transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(43,47,56,0.10)]"
+          >
+            <div className="overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.alt}
+                width={700}
+                height={544}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
 
-        <div
-          role="img"
-          aria-label="Nutrition talks and presentations"
-          className="flex flex-col justify-end rounded-2xl bg-card bg-contain bg-top bg-no-repeat p-8 pt-64 transition-shadow hover:shadow-2xl"
-          style={{ backgroundImage: `url(${avocados})` }}
-        >
-          <h3 className="mb-2 text-lg font-semibold text-ink">
-            Nutrition Talks
-          </h3>
-          <p className="mb-4 text-sm text-body">
-            Talks and presentations are available for all age groups - from
-            primary and high school students to university students and
-            older adults - on topics related to healthy, balanced eating.
-          </p>
-          <div className="flex flex-col items-start gap-2 text-sm font-semibold uppercase tracking-wide">
-            <a href="#contact" className="text-pink">
-              Book a Talk
-            </a>
-          </div>
-        </div>
+            <div className="flex flex-1 flex-col p-7">
+              <span className="mb-3 text-xs font-semibold tracking-[0.18em] text-pink">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mb-3 text-xl font-semibold text-ink">
+                {service.title}
+              </h3>
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-body">
+                {service.desc}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="#contact"
+                  className={`rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-wide transition-colors ${service.ctaClass}`}
+                >
+                  {service.cta}
+                </a>
+                {service.modal && (
+                  <button
+                    type="button"
+                    onClick={() => setModal(service.modal!)}
+                    className={`px-2 py-2.5 text-xs font-semibold uppercase tracking-wide underline underline-offset-4 ${service.detailsClass}`}
+                  >
+                    {service.detailsLabel}
+                  </button>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
 
       <ServiceModal

@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const TESTIMONIALS = [
   {
@@ -17,73 +16,29 @@ const TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % TESTIMONIALS.length),
-      5000,
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  const prev = () =>
-    setIndex((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
-  const next = () => setIndex((i) => (i + 1) % TESTIMONIALS.length);
-
-  const current = TESTIMONIALS[index];
-
   return (
-    <section
-      id="testimonials"
-      className="my-12 rounded-[32px] bg-gradient-to-br from-pink/65 to-pink-dark px-6 py-20 text-center text-white"
-    >
-      <h2 className="mb-10 text-3xl font-semibold">
-        What Our Cape Town Clients Say
-      </h2>
+    <section id="testimonials" className="px-4 py-8 md:py-12">
+      <div className="mx-auto max-w-6xl rounded-[40px] bg-gradient-to-br from-pink/65 to-pink-dark px-6 py-16 text-white md:rounded-[56px] md:px-14 md:py-20">
+        <h2 className="max-w-md text-3xl font-semibold md:text-[40px] md:leading-tight">
+          What Our Cape Town Clients Say
+        </h2>
 
-      <div className="mx-auto flex max-w-2xl items-center gap-4">
-        <button
-          type="button"
-          onClick={prev}
-          aria-label="Previous testimonial"
-          className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-        >
-          <ChevronLeft />
-        </button>
-
-        <div className="min-h-[140px] flex-1">
-          <p className="text-sm italic leading-relaxed md:text-base">
-            {current.text}
-          </p>
-          <cite className="mt-4 block text-sm font-semibold not-italic">
-            {current.name}
-          </cite>
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {TESTIMONIALS.map(({ text, name }) => (
+            <figure
+              key={name}
+              className="flex flex-col rounded-[28px] bg-white/12 p-7 backdrop-blur-sm ring-1 ring-white/20"
+            >
+              <Quote size={26} className="mb-4 shrink-0 text-white/60" />
+              <blockquote className="flex-1 text-sm leading-relaxed text-white/95">
+                {text}
+              </blockquote>
+              <figcaption className="mt-6 border-t border-white/25 pt-4 text-sm font-semibold">
+                {name}
+              </figcaption>
+            </figure>
+          ))}
         </div>
-
-        <button
-          type="button"
-          onClick={next}
-          aria-label="Next testimonial"
-          className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-        >
-          <ChevronRight />
-        </button>
-      </div>
-
-      <div className="mt-8 flex justify-center gap-2">
-        {TESTIMONIALS.map((t, i) => (
-          <button
-            key={t.name}
-            type="button"
-            aria-label={`Go to testimonial ${i + 1}`}
-            onClick={() => setIndex(i)}
-            className={
-              "h-2 w-2 rounded-full transition-colors " +
-              (i === index ? "bg-white" : "bg-white/40")
-            }
-          />
-        ))}
       </div>
     </section>
   );
