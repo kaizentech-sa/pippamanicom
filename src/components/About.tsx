@@ -43,7 +43,7 @@ export default function About() {
                 About Pippa
               </h2>
 
-              <p className="border-l-4 border-pink pl-5 text-lg font-medium leading-relaxed text-ink md:text-xl">
+              <p className="text-lg font-medium leading-relaxed text-ink md:text-xl">
                 With a passion for health, wellness and food, I am dedicated
                 to helping others to live a healthier life. I offer a
                 holistic approach to nutrition, focusing on sustainable
@@ -118,15 +118,19 @@ export default function About() {
               Work Experience
             </h2>
 
-            <ol className="relative space-y-8 border-l-2 border-lavender pl-8">
+            <ol className="space-y-7">
               {EXPERIENCE.map((item, i) => (
-                <li key={item} className="relative">
+                <li key={item} className="grid grid-cols-[auto_1fr] gap-5">
                   <span
                     aria-hidden="true"
-                    className={`absolute -left-[41px] top-1 flex h-4 w-4 items-center justify-center rounded-full ring-4 ring-white ${
-                      i % 2 === 0 ? "bg-pink" : "bg-green"
+                    className={`mt-0.5 flex h-8 w-8 items-center justify-center rounded-full text-xs font-semibold ${
+                      i % 2 === 0
+                        ? "bg-pink/10 text-pink"
+                        : "bg-green/15 text-green"
                     }`}
-                  />
+                  >
+                    {i + 1}
+                  </span>
                   <p
                     className={`text-sm leading-relaxed ${
                       i === 0 ? "font-semibold text-ink" : "text-body"

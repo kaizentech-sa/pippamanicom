@@ -42,11 +42,11 @@ export default function Conditions() {
         />
       </div>
 
-      <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <ul className="mt-12 grid grid-cols-1 gap-x-12 sm:grid-cols-2">
         {CONDITIONS.map((item, i) => (
           <li
             key={item}
-            className="flex items-center gap-4 rounded-2xl border border-lavender bg-white px-5 py-4 transition-colors hover:border-pink/40 hover:bg-cloud"
+            className="flex items-center gap-4 border-b border-lavender py-4"
           >
             <WatermelonIcon
               color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
@@ -56,6 +56,7 @@ export default function Conditions() {
           </li>
         ))}
       </ul>
+
     </section>
   );
 }

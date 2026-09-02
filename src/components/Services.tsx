@@ -55,7 +55,7 @@ export default function Services() {
   const [modal, setModal] = useState<"private" | "corporate" | null>(null);
 
   return (
-    <section id="services" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+    <section id="services" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
       <div className="grid grid-cols-1 gap-6 border-b border-lavender pb-10 md:grid-cols-[1fr_1fr] md:items-end md:gap-16">
         <h2 className="text-3xl font-semibold text-ink md:text-[40px] md:leading-tight">
           Dietitian Services in Cape Town
@@ -66,54 +66,91 @@ export default function Services() {
         </p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-        {SERVICES.map((service, i) => (
-          <article
-            key={service.title}
-            className="group flex flex-col overflow-hidden rounded-[28px] bg-cloud transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(43,47,56,0.10)]"
-          >
-            <div className="overflow-hidden">
-              <img
-                src={service.image}
-                alt={service.alt}
-                width={700}
-                height={544}
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+      <div className="mt-12 space-y-8">
+        <article className="group grid grid-cols-1 overflow-hidden rounded-[28px] bg-cloud md:grid-cols-[1.1fr_1fr]">
+          <div className="overflow-hidden">
+            <img
+              src={SERVICES[0].image}
+              alt={SERVICES[0].alt}
+              width={700}
+              height={544}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 md:min-h-[340px]"
+            />
+          </div>
+          <div className="flex flex-col justify-center p-8 md:p-12">
+            <span className="mb-3 text-xs font-semibold tracking-[0.18em] text-pink">
+              MOST BOOKED
+            </span>
+            <h3 className="mb-4 text-2xl font-semibold text-ink md:text-[28px]">
+              {SERVICES[0].title}
+            </h3>
+            <p className="mb-7 max-w-md text-sm leading-relaxed text-body">
+              {SERVICES[0].desc}
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="#contact"
+                className={`rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-wide transition-colors ${SERVICES[0].ctaClass}`}
+              >
+                {SERVICES[0].cta}
+              </a>
+              <button
+                type="button"
+                onClick={() => setModal("private")}
+                className={`px-2 py-2.5 text-xs font-semibold uppercase tracking-wide underline underline-offset-4 ${SERVICES[0].detailsClass}`}
+              >
+                {SERVICES[0].detailsLabel}
+              </button>
             </div>
+          </div>
+        </article>
 
-            <div className="flex flex-1 flex-col p-7">
-              <span className="mb-3 text-xs font-semibold tracking-[0.18em] text-pink">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-3 text-xl font-semibold text-ink">
-                {service.title}
-              </h3>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-body">
-                {service.desc}
-              </p>
-
-              <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href="#contact"
-                  className={`rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-wide transition-colors ${service.ctaClass}`}
-                >
-                  {service.cta}
-                </a>
-                {service.modal && (
-                  <button
-                    type="button"
-                    onClick={() => setModal(service.modal!)}
-                    className={`px-2 py-2.5 text-xs font-semibold uppercase tracking-wide underline underline-offset-4 ${service.detailsClass}`}
-                  >
-                    {service.detailsLabel}
-                  </button>
-                )}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          {SERVICES.slice(1).map((service) => (
+            <article
+              key={service.title}
+              className="group flex flex-col overflow-hidden rounded-[28px] bg-cloud transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(43,47,56,0.10)]"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.alt}
+                  width={700}
+                  height={544}
+                  loading="lazy"
+                  className="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-            </div>
-          </article>
-        ))}
+
+              <div className="flex flex-1 flex-col p-8">
+                <h3 className="mb-3 text-xl font-semibold text-ink">
+                  {service.title}
+                </h3>
+                <p className="mb-7 flex-1 text-sm leading-relaxed text-body">
+                  {service.desc}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="#contact"
+                    className={`rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-wide transition-colors ${service.ctaClass}`}
+                  >
+                    {service.cta}
+                  </a>
+                  {service.modal && (
+                    <button
+                      type="button"
+                      onClick={() => setModal(service.modal!)}
+                      className={`px-2 py-2.5 text-xs font-semibold uppercase tracking-wide underline underline-offset-4 ${service.detailsClass}`}
+                    >
+                      {service.detailsLabel}
+                    </button>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
 
       <ServiceModal
