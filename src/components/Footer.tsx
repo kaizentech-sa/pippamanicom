@@ -54,10 +54,10 @@ export default function Footer() {
             <p>
               <span className="font-semibold text-ink">Email: </span>
               <a
-                href="mailto:hello@pippamanicom.co.za"
+                href="mailto:pippamanicom@gmail.com"
                 className="hover:text-pink"
               >
-                hello@pippamanicom.co.za
+                pippamanicom@gmail.com
               </a>
             </p>
             <p>

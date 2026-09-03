@@ -27,7 +27,7 @@ const CONTACT_METHODS = [
   {
     icon: Mail,
     iconClass: "text-pink",
-    href: "mailto:hello@pippamanicom.co.za",
+    href: "mailto:pippamanicom@gmail.com",
     label: "Email",
     external: false,
   },
@@ -38,7 +38,7 @@ const fieldClass =
 
 const FORM_ENDPOINT =
   import.meta.env.VITE_CONTACT_ENDPOINT ??
-  "https://formsubmit.co/ajax/hello@pippamanicom.co.za";
+  "https://formsubmit.co/ajax/pippamanicom@gmail.com";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);

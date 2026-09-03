@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How do I book an appointment?",
-    a: "Simply fill in the contact form below, WhatsApp or call 084 616 7000, or email hello@pippamanicom.co.za — Pippa will get back to you to confirm a time that suits you.",
+    a: "Simply fill in the contact form below, WhatsApp or call 084 616 7000, or email pippamanicom@gmail.com — Pippa will get back to you to confirm a time that suits you.",
   },
 ];
 
