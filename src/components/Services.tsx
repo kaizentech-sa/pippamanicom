@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ServiceModal from "./ServiceModal";
-import produce from "../assets/images/pippa-manicom-fresh-produce-private-consultations.webp";
-import grapefruit from "../assets/images/pippa-manicom-grapefruit-corporate-wellness.webp";
+import grapefruit from "../assets/images/pippa-manicom-grapefruit-private-consultations.webp";
+import produce from "../assets/images/pippa-manicom-fresh-produce-corporate-wellness.webp";
 import raspberries from "../assets/images/pippa-manicom-raspberries-nutrition-talks.webp";
 import avocado from "../assets/images/pippa-manicom-avocado-consultation-rates.webp";
 import greenApples from "../assets/images/pippa-manicom-green-apples-corporate-wellness.webp";
@@ -20,8 +20,8 @@ type Service = {
 
 const SERVICES: Service[] = [
   {
-    image: produce,
-    alt: "Kale, carrot, cucumber, beetroot, apple and citrus laid out on white - private dietitian consultations in Constantia, Cape Town",
+    image: grapefruit,
+    alt: "Grapefruit and citrus slices with rosemary - private dietitian consultations in Constantia, Cape Town",
     title: "Private Consultations",
     desc: "My personalised approach takes into account your unique lifestyle, preferences, and challenges, ensuring that we create a path to wellness that works for you, can be done in person or online.",
     modal: "private",
@@ -31,8 +31,8 @@ const SERVICES: Service[] = [
     ctaClass: "bg-pink text-white hover:bg-pink-dark",
   },
   {
-    image: grapefruit,
-    alt: "Pink grapefruit and citrus slices with herbs - corporate wellness nutrition programmes in Cape Town",
+    image: produce,
+    alt: "Kale, carrot, cucumber, beetroot, apple and citrus laid out on white - corporate wellness nutrition programmes in Cape Town",
     title: "Corporate Wellness",
     desc: "With over 20 years of experience in working with corporates, I understand the challenges of keeping a work-life balance. I can help increase productivity in a healthier, happier working environment.",
     modal: "corporate",
