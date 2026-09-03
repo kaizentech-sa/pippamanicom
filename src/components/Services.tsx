@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ServiceModal from "./ServiceModal";
-import oranges from "../assets/images/pippa-manicom-oranges-private-consultations.webp";
+import produce from "../assets/images/pippa-manicom-fresh-produce-private-consultations.webp";
 import grapefruit from "../assets/images/pippa-manicom-grapefruit-corporate-wellness.webp";
 import raspberries from "../assets/images/pippa-manicom-raspberries-nutrition-talks.webp";
 import avocado from "../assets/images/pippa-manicom-avocado-consultation-rates.webp";
@@ -20,8 +20,8 @@ type Service = {
 
 const SERVICES: Service[] = [
   {
-    image: oranges,
-    alt: "Orange slices with fresh citrus leaves - private dietitian consultations in Constantia, Cape Town",
+    image: produce,
+    alt: "Kale, carrot, cucumber, beetroot, apple and citrus laid out on white - private dietitian consultations in Constantia, Cape Town",
     title: "Private Consultations",
     desc: "My personalised approach takes into account your unique lifestyle, preferences, and challenges, ensuring that we create a path to wellness that works for you, can be done in person or online.",
     modal: "private",

@@ -13,7 +13,7 @@ at full size before committing it.
 
 | File | Used in | Subject | Source |
 | --- | --- | --- | --- |
-| `src/assets/images/pippa-manicom-oranges-private-consultations.webp` | Services — Private Consultations card | Orange slices with citrus leaves | [KyAacW3enww](https://unsplash.com/photos/KyAacW3enww) |
+| `src/assets/images/pippa-manicom-fresh-produce-private-consultations.webp` | Services — Private Consultations card | Kale, carrot, cucumber, beetroot, apple and citrus | [ocnsb17U6FE](https://unsplash.com/photos/ocnsb17U6FE) |
 | `src/assets/images/pippa-manicom-grapefruit-corporate-wellness.webp` | Services — Corporate Wellness card | Grapefruit and citrus slices with herbs | [O8jFliG2rCI](https://unsplash.com/photos/O8jFliG2rCI) |
 | `src/assets/images/pippa-manicom-raspberries-nutrition-talks.webp` | Services — Nutrition Talks card | Raspberries with mint leaves | [gQyTxSrctvw](https://unsplash.com/photos/gQyTxSrctvw) |
 | `src/assets/images/pippa-manicom-avocado-consultation-rates.webp` | Private consultation rates modal | Halved avocado | [lUJZTE5SagI](https://unsplash.com/photos/lUJZTE5SagI) |
