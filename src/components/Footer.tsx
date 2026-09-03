@@ -77,12 +77,28 @@ export default function Footer() {
           <h3 className="mb-4 text-lg font-semibold text-ink">
             More Information
           </h3>
-          <a
-            href="/privacy-policy"
-            className="text-sm text-slate hover:text-pink"
-          >
-            Privacy Policy
-          </a>
+          <ul className="space-y-2 text-sm text-slate">
+            <li>
+              <a href="#services" className="hover:text-pink">
+                Dietitian Services &amp; Rates
+              </a>
+            </li>
+            <li>
+              <a href="#conditions" className="hover:text-pink">
+                Conditions Pippa Treats
+              </a>
+            </li>
+            <li>
+              <a href="#areas" className="hover:text-pink">
+                Areas Served
+              </a>
+            </li>
+            <li>
+              <a href="#faq" className="hover:text-pink">
+                Frequently Asked Questions
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 

@@ -36,13 +36,57 @@ const CONTACT_METHODS = [
 const fieldClass =
   "w-full rounded-lg border border-lavender bg-cloud px-4 py-2.5 text-sm text-ink outline-none placeholder:text-body/70 focus:border-pink focus:ring-2 focus:ring-pink/30";
 
+const FORM_ENDPOINT =
+  import.meta.env.VITE_CONTACT_ENDPOINT ??
+  "https://formsubmit.co/ajax/hello@pippamanicom.co.za";
+
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    setSending(true);
+    setError("");
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: "New enquiry from pippamanicom.co.za",
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+
+      // FormSubmit answers 200 even when it did not send (for example while
+      // the destination address is still awaiting its activation click), so
+      // the body has to be checked too.
+      const body = await res.json().catch(() => null);
+      const delivered =
+        res.ok && (body?.success === true || body?.success === "true");
+      if (!delivered) throw new Error(body?.message ?? String(res.status));
+
+      form.reset();
+      setMessage("");
+      setSent(true);
+    } catch {
+      setError(
+        "Something went wrong sending your message. Please call or WhatsApp 084 616 7000 instead.",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -101,6 +145,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="First Name"
                   required
                   placeholder="E.g. John"
                   autoComplete="name"
@@ -115,6 +160,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="Email"
                     required
                     placeholder="E.g. john@doe.com"
                     autoComplete="email"
@@ -127,6 +173,8 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="Phone Number"
+                    autoComplete="tel"
                     placeholder="E.g. +27 82 428 4374"
                     className={fieldClass}
                   />
@@ -137,7 +185,7 @@ export default function Contact() {
                 <label className="mb-1 block text-sm font-medium text-ink">
                   I want to know more about...
                 </label>
-                <select className={fieldClass}>
+                <select name="Interested In" className={fieldClass}>
                   <option value="">Select an option</option>
                   {INTERESTS.map((i) => (
                     <option key={i} value={i}>
@@ -152,6 +200,7 @@ export default function Contact() {
                   Message
                 </label>
                 <textarea
+                  name="Message"
                   maxLength={180}
                   rows={4}
                   placeholder="Enter your message..."
@@ -164,11 +213,27 @@ export default function Contact() {
                 </div>
               </div>
 
+              <input
+                type="text"
+                name="_honey"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+
+              {error && (
+                <p role="alert" className="text-sm text-pink">
+                  {error}
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="w-full rounded-full bg-pink py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-pink-dark"
+                disabled={sending}
+                className="w-full rounded-full bg-pink py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-pink-dark disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
+                {sending ? "Sending..." : "Send Message"}
               </button>
             </form>
           )}

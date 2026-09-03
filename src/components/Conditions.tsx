@@ -1,17 +1,28 @@
-import WatermelonIcon from "./WatermelonIcon";
-import kiwi from "../assets/images/Kiwi-Fruits.webp";
+import {
+  IconMelon,
+  IconApple,
+  IconAvocado,
+  IconCherry,
+  IconLemon2,
+  IconGrape,
+  IconCarrot,
+  IconSalad,
+  IconPepper,
+  IconWheat,
+} from "@tabler/icons-react";
+import kiwi from "../assets/images/pippa-manicom-kiwi-fruit.webp";
 
 const CONDITIONS = [
-  "Weight Management (loss or gain)",
-  "Type 2 Diabetes, Insulin Resistance",
-  "Cholesterol",
-  "High Blood Pressure",
-  "Arthritis, Gout",
-  "Fibromyalgia, Chronic Fatigue Syndrome",
-  "IBS, Heartburn/Reflux, Constipation",
-  "Pregnancy and Breastfeeding",
-  "Menopause",
-  "Sports Nutrition",
+  { label: "Weight Management (loss or gain)", icon: IconMelon },
+  { label: "Type 2 Diabetes, Insulin Resistance", icon: IconApple },
+  { label: "Cholesterol", icon: IconAvocado },
+  { label: "High Blood Pressure", icon: IconCherry },
+  { label: "Arthritis, Gout", icon: IconLemon2 },
+  { label: "Fibromyalgia, Chronic Fatigue Syndrome", icon: IconGrape },
+  { label: "IBS, Heartburn/Reflux, Constipation", icon: IconCarrot },
+  { label: "Pregnancy and Breastfeeding", icon: IconSalad },
+  { label: "Menopause", icon: IconPepper },
+  { label: "Sports Nutrition", icon: IconWheat },
 ];
 
 export default function Conditions() {
@@ -34,29 +45,30 @@ export default function Conditions() {
 
         <img
           src={kiwi}
-          alt="Fresh kiwi fruit - healthy nutrition guidance from a Cape Town dietitian"
-          width={675}
-          height={395}
+          alt="Halved kiwi fruit - evidence-based nutrition therapy from a registered dietitian in Constantia, Cape Town"
+          width={900}
+          height={520}
           loading="lazy"
           className="hidden w-full rounded-[40px] object-cover md:block"
         />
       </div>
 
       <ul className="mt-12 grid grid-cols-1 gap-x-12 sm:grid-cols-2">
-        {CONDITIONS.map((item, i) => (
+        {CONDITIONS.map(({ label, icon: Icon }, i) => (
           <li
-            key={item}
+            key={label}
             className="flex items-center gap-4 border-b border-lavender py-4"
           >
-            <WatermelonIcon
-              color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
+            <Icon
               size={28}
+              stroke={1.7}
+              className="shrink-0"
+              color={i % 2 === 0 ? "#61ce70" : "#ec297a"}
             />
-            <span className="text-base text-ink">{item}</span>
+            <span className="text-base text-ink">{label}</span>
           </li>
         ))}
       </ul>
-
     </section>
   );
 }

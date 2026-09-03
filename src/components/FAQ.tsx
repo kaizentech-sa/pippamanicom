@@ -64,6 +64,7 @@ export default function FAQ() {
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${i}`}
                   className="flex w-full items-center justify-between gap-5 py-5 text-left text-base font-semibold text-ink transition-colors hover:text-pink"
                 >
                   {item.q}
@@ -75,11 +76,13 @@ export default function FAQ() {
                     {isOpen ? <Minus size={15} /> : <Plus size={15} />}
                   </span>
                 </button>
-                {isOpen && (
-                  <p className="pb-5 pr-12 text-sm leading-relaxed text-body">
-                    {item.a}
-                  </p>
-                )}
+                <p
+                  id={`faq-answer-${i}`}
+                  hidden={!isOpen}
+                  className="pb-5 pr-12 text-sm leading-relaxed text-body"
+                >
+                  {item.a}
+                </p>
               </div>
             );
           })}

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import ServiceModal from "./ServiceModal";
-import lemons from "../assets/images/Pippa-Manicom-Lemons.webp";
-import protein from "../assets/images/Pippa-.webp";
-import avocados from "../assets/images/Pippa-Manicom-Avocados.webp";
-import limes from "../assets/images/Limes.webp";
-import blueberries from "../assets/images/Blueberrues.webp";
+import citrus from "../assets/images/pippa-manicom-citrus-private-consultations.webp";
+import strawberries from "../assets/images/pippa-manicom-strawberries-corporate-wellness.webp";
+import pear from "../assets/images/pippa-manicom-pear-nutrition-talks.webp";
+import lemons from "../assets/images/pippa-manicom-lemons-consultation-rates.webp";
+import limes from "../assets/images/pippa-manicom-limes-corporate-wellness.webp";
 
 type Service = {
   image: string;
@@ -20,8 +20,8 @@ type Service = {
 
 const SERVICES: Service[] = [
   {
-    image: lemons,
-    alt: "Fresh lemons - private nutrition consultations",
+    image: citrus,
+    alt: "Fresh orange with a leaf - private dietitian consultations in Constantia, Cape Town",
     title: "Private Consultations",
     desc: "My personalised approach takes into account your unique lifestyle, preferences, and challenges, ensuring that we create a path to wellness that works for you, can be done in person or online.",
     modal: "private",
@@ -31,8 +31,8 @@ const SERVICES: Service[] = [
     ctaClass: "bg-pink text-white hover:bg-pink-dark",
   },
   {
-    image: protein,
-    alt: "Corporate wellness nutrition programme",
+    image: strawberries,
+    alt: "Fresh strawberries - corporate wellness nutrition programmes in Cape Town",
     title: "Corporate Wellness",
     desc: "With over 20 years of experience in working with corporates, I understand the challenges of keeping a work-life balance. I can help increase productivity in a healthier, happier working environment.",
     modal: "corporate",
@@ -42,8 +42,8 @@ const SERVICES: Service[] = [
     ctaClass: "bg-green text-white hover:bg-green-bright",
   },
   {
-    image: avocados,
-    alt: "Nutrition talks and presentations",
+    image: pear,
+    alt: "Fresh green pear - nutrition talks and presentations for Cape Town schools and businesses",
     title: "Nutrition Talks",
     desc: "Talks and presentations are available for all age groups - from primary and high school students to university students and older adults - on topics related to healthy, balanced eating.",
     cta: "Book a Talk",
@@ -157,7 +157,7 @@ export default function Services() {
         open={modal === "private"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image={limes}
+        image={lemons}
       >
         <ul className="list-disc space-y-3 pl-5">
           <li>
@@ -191,7 +191,7 @@ export default function Services() {
         open={modal === "corporate"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image={blueberries}
+        image={limes}
       >
         <ul className="list-disc space-y-2 pl-5">
           <li>One-on-one consultations in the office environment</li>
