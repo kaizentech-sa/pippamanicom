@@ -3,7 +3,6 @@
   "buildCommand": "npx playwright install chromium && npm run build",
   "outputDirectory": "dist",
   "framework": null,
-  "cleanUrls": true,
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -17,7 +16,10 @@
     {
       "source": "/(index.html|robots.txt|sitemap.xml|llms.txt)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     }
   ]
