@@ -92,10 +92,10 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-cover bg-center py-20 md:py-24"
+      className="relative bg-cover bg-bottom pb-44 pt-20 md:pb-64 md:pt-24"
       style={{ backgroundImage: `url(${peppers})` }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/90 to-transparent" />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-6 md:grid-cols-[1fr_1.1fr] md:gap-16">
         <div className="md:pt-4">

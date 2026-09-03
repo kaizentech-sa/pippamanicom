@@ -1,10 +1,10 @@
 import { useState } from "react";
 import ServiceModal from "./ServiceModal";
-import citrus from "../assets/images/pippa-manicom-citrus-private-consultations.webp";
+import oranges from "../assets/images/pippa-manicom-oranges-private-consultations.webp";
 import grapefruit from "../assets/images/pippa-manicom-grapefruit-corporate-wellness.webp";
-import avocado from "../assets/images/pippa-manicom-avocado-nutrition-talks.webp";
-import lemons from "../assets/images/pippa-manicom-lemons-consultation-rates.webp";
-import oranges from "../assets/images/pippa-manicom-oranges-corporate-wellness.webp";
+import citrusMix from "../assets/images/pippa-manicom-citrus-nutrition-talks.webp";
+import rates from "../assets/images/pippa-manicom-oranges-consultation-rates.webp";
+import limes from "../assets/images/pippa-manicom-limes-corporate-wellness.webp";
 
 type Service = {
   image: string;
@@ -20,8 +20,8 @@ type Service = {
 
 const SERVICES: Service[] = [
   {
-    image: citrus,
-    alt: "Halved oranges and fresh citrus leaves - private dietitian consultations in Constantia, Cape Town",
+    image: oranges,
+    alt: "Orange slices with fresh citrus leaves - private dietitian consultations in Constantia, Cape Town",
     title: "Private Consultations",
     desc: "My personalised approach takes into account your unique lifestyle, preferences, and challenges, ensuring that we create a path to wellness that works for you, can be done in person or online.",
     modal: "private",
@@ -42,8 +42,8 @@ const SERVICES: Service[] = [
     ctaClass: "bg-green text-white hover:bg-green-bright",
   },
   {
-    image: avocado,
-    alt: "Halved avocados with green leaves - nutrition talks and presentations for Cape Town schools and businesses",
+    image: citrusMix,
+    alt: "Grapefruit, orange, lemon and lime slices - nutrition talks and presentations for Cape Town schools and businesses",
     title: "Nutrition Talks",
     desc: "Talks and presentations are available for all age groups - from primary and high school students to university students and older adults - on topics related to healthy, balanced eating.",
     cta: "Book a Talk",
@@ -157,7 +157,7 @@ export default function Services() {
         open={modal === "private"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image={lemons}
+        image={rates}
       >
         <ul className="list-disc space-y-3 pl-5">
           <li>
@@ -191,7 +191,7 @@ export default function Services() {
         open={modal === "corporate"}
         onClose={() => setModal(null)}
         title="What I Offer:"
-        image={oranges}
+        image={limes}
       >
         <ul className="list-disc space-y-2 pl-5">
           <li>One-on-one consultations in the office environment</li>
