@@ -30,3 +30,25 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+## Vercel preview
+
+Production is S3 + CloudFront via `.github/workflows/deploy.yml`. Vercel is
+only used for client preview links.
+
+Deploy previews with a **local** build:
+
+```bash
+npx vercel build --prod && npx vercel deploy --prebuilt --prod
+```
+
+The build's prerender step needs a real Chromium. Vercel's build image cannot
+run one — `npx playwright install chromium` fetches the browser but not its
+system libraries, and installing those needs root, which the builder does not
+grant, so Chromium fails on `libnspr4.so`. `scripts/prerender.mjs` treats that
+as non-fatal and ships the client-rendered HTML instead, which silently loses
+the static markup that crawlers and AI answer engines read. Building locally
+avoids it. The GitHub Actions runner has no such problem, so production is
+unaffected.
+
+Stable preview URL: https://pippamanicom.vercel.app
