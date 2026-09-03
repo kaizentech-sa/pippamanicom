@@ -18,7 +18,7 @@ export default function About() {
               well-being.
             </p>
 
-            <div className="mt-8 space-y-5 text-sm leading-relaxed text-body md:columns-2 md:gap-10 md:space-y-0 md:[&>p]:mb-5">
+            <div className="mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-body">
               <p>
                 My practice centres around the idea that nutrition doesn't
                 have to be restrictive or overwhelming. Instead, I emphasise
